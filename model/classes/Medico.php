@@ -73,16 +73,4 @@
         {
                 return $this->codMedico;
         }
-
-        /**
-         * Set the value of codMedico
-         *
-         * @return  self
-         */ 
-        public function setCodMedico($codMedico)
-        {
-                $this->codMedico = $codMedico;
-
-                return $this;
-        }
     }
