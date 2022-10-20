@@ -1,5 +1,5 @@
 <?php
-include_once ('../model/classes/clinic.php');
+include_once ('../model/classes/Clinic.php');
 
 session_start();
 

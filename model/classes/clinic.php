@@ -1,9 +1,9 @@
 <?php
 
-include_once ('../dao/clinicdao.php');
+include_once ('../model/dao/ClinicDao.php');
 //get = pessoa pode ver     set = pessoa pode alterar
 //baixando php get e setters e php debbug
-class clinic{
+class Clinic{
     private $cod_clinic;
     private $name;
     private $cnpj;
@@ -32,7 +32,7 @@ class clinic{
     }
 
     public function incluirClinic(){
-        $ClinicDao = new ClinicDao();
+        $ClinicDao = new ClinicDao;
         if($ClinicDao -> incluirClinic($this)){
             return true;
         }else{
