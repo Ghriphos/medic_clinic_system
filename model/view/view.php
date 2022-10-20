@@ -13,7 +13,7 @@
     </center>
 
 <form action="../controller/controlclinic.php" method="post">
-    Incluir Livro
+    Incluir Clínica
     <br /><br />
     Digite o Nome: <input type="text" name="name" size="20" />
     <br /><br />
@@ -24,6 +24,8 @@
     Digite a Rua: <input type="text" name="street" size="20" />
     <br /><br />
     Digite o Número da Rua: <input type="text" name="street_number" size="20" />
+    <br /><br />
+    Digite o Complemento: <input type="text" name="street_complement" size="20" />
     <br /><br />
     Digite o Bairro: <input type="text" name="district" size="20" />
     <br /><br />
