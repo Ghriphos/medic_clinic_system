@@ -8,12 +8,12 @@ class ClinicDao{
     public function __construct()
     {
     
-        $this->c = mysqli_connect("localhost", "root", "", "medic_clinic");
+        $this->c = mysqli_connect("localhost", "root","", "medic_clinic");
         $_SESSION['msg'] = "\n" . "passei aqui". $this->c;
         if (mysqli_connect_errno() == 0){
             echo "\n" . "Conexão ok!";
         } else {
-            $msg = mysqli_connect_error();
+            $msg = mysqli_error($this->c);
             $_SESSION['msg'] = "\n" . "Falha na conexão '$msg'";
         }
     }
