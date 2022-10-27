@@ -15,7 +15,7 @@
 <form action="../controller/controlclinic.php" method="post">
     Incluir Clínica
     <br /><br />
-    Digite o Nome: <input type="text" name="name" size="20" />
+    Digite o Nome: <input type="text" name="nome" size="20" />
     <br /><br />
     Digite o CNPJ: <input type="text" name="cnpj" size="20" />
     <br /><br />

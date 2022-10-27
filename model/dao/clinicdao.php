@@ -7,8 +7,8 @@ class ClinicDao{
 
     public function __construct()
     {
+    
         $this->c = mysqli_connect("localhost", "root","", "medic_clinic");
-        $_SESSION['msg'] = "\n" . "passei aqui";
         if (mysqli_connect_errno() == 0){
             echo "\n" . "Conexão ok!";
         } else {
@@ -19,7 +19,7 @@ class ClinicDao{
 
     public function IncluirClinic($clinic){
         $sql = "INSERT INTO clinic (nome, cnpj, email, street, street_number, street_complement, district, phone, open_hour, close_hour) VALUES ('". /* aspa simples (') é para concatenar o valor que está dentro da "" (concatenar tipo o .)*/
-        $clinic -> getName()."','".
+        $clinic -> getNome()."','".
         $clinic -> getCnpj()."','".
         $clinic -> getEmail()."','".
         $clinic -> getStreet()."','".
