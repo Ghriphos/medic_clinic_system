@@ -18,11 +18,7 @@ class Clinic{
 
     //construtor
     public function _construct($nome, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
-<<<<<<< HEAD
-        $this -> setName($nome);
-=======
         $this -> setNome($nome);
->>>>>>> 468e986a99c453e79ca6aa84fe90ab36a56f533a
         $this -> setCnpj($cnpj);
         $this -> setEmail($email);
         $this -> setStreet($street);
