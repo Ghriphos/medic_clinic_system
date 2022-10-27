@@ -8,14 +8,14 @@ extract($_REQUEST, EXTR_SKIP);
 if (isset($acao)) {
     if ($acao == "Incluir") {
         if (
-            isset($name) 
+            isset($nome) 
             && isset($cnpj) && isset($email)
             && isset($street) && isset($street_number)
             && isset($street_complement) && isset($district)
             && isset($phone) && isset($open_hour)
             && isset($close_hour)
         ) {
-            $name = htmlspecialchars_decode(strip_tags($name));
+            $name = htmlspecialchars_decode(strip_tags($nome));
             $cnpj = htmlspecialchars_decode(strip_tags($cnpj));
             $email = htmlspecialchars_decode(strip_tags($email));
             $street = htmlspecialchars_decode(strip_tags($street));
@@ -27,12 +27,12 @@ if (isset($acao)) {
             $close_hour = htmlspecialchars_decode(strip_tags($close_hour));
             
             if (
-                is_string($name)&& is_numeric($cnpj)
+                is_string($nome)&& is_numeric($cnpj)
                 && is_string($email) && is_string($street)
                 && is_numeric($street_number) && is_string($street_complement)
                 && is_string($district) && is_numeric($phone)
                 ) {
-                    $clinic = new Clinic($name,$cnpj,$email,$street,$street_number,$street_complement,$district,$phone);
+                    $clinic = new Clinic($nome,$cnpj,$email,$street,$street_number,$street_complement,$district,$phone,$open_hour,$close_hour);
                     if ($clinic->incluirClinic()){
                         $_SESSION['msg'] = "\n" ."Clínica Incluido com sucesso !!";     
                     } else {
