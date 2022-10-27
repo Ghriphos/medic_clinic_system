@@ -5,7 +5,7 @@ include_once ('../model/dao/ClinicDao.php');
 //baixando php get e setters e php debbug
 class Clinic{
     private $cod_clinic;
-    private $name;
+    private $nome;
     private $cnpj;
     private $email;
     private $street;
@@ -17,8 +17,8 @@ class Clinic{
     private $close_hour;
 
     //construtor
-    public function _construct($name, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
-        $this -> setName($name);
+    public function _construct($nome, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
+        $this -> setNome($nome);
         $this -> setCnpj($cnpj);
         $this -> setEmail($email);
         $this -> setStreet($street);
@@ -49,23 +49,23 @@ class Clinic{
     }
 
     /**
-     * Get the value of name
-     */ 
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
+     * Set the value of nome
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setNome($nome)
     {
-        $this->name = $name;
+        $this->nome = $nome;
 
         return $this;
+    }
+
+    /**
+     * Get the value of nome
+     */ 
+    public function getNome()
+    {
+        return $this->nome;
     }
 
     /**
