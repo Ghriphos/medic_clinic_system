@@ -32,8 +32,6 @@
             <br /><br />
             Digite a receita: <input type="text" name="receita" size="20" />
             <br /><br />
-            Digite o codigo prontuario: <input type="text" name="codProntuario" size="20" />
-            <br /><br />
             <br /><br />
             <input type="hidden" name="acao" value="IncluirPront">
             <input type="submit" value="IncluirPront" />

@@ -24,14 +24,13 @@ class ProntuarioDao
 
     public function incluirProntuario($prontuario)
     {
-        $sql = "INSERT INTO prontuario (vacina, examepedido, examevisto, cirurgia, receita, codProntuario) 
+        $sql = "INSERT INTO prontuario (vacina, examepedido, examevisto, cirurgia, receita) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $prontuario->getVacina()."','".
         $prontuario->getExamepedido()."','".
         $prontuario->getExamevisto()."','".
         $prontuario->getcirurgia()."','".
-        $prontuario->getreceita()."','".
-        $prontuario->getCodProntuario()."');";
+        $prontuario->getreceita()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)

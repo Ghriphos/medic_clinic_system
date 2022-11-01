@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Nov-2022 às 01:46
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 01-Nov-2022 às 21:17
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,13 +64,6 @@ CREATE TABLE `prontuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `prontuario`
---
-
-INSERT INTO `prontuario` (`vacina`, `examepedido`, `examevisto`, `cirurgia`, `receita`, `codProntuario`) VALUES
-('', '', '', '', '', 1);
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -100,7 +93,7 @@ ALTER TABLE `clinic`
 -- AUTO_INCREMENT de tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
