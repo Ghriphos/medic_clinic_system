@@ -10,6 +10,14 @@ class Person{
     private $cttemerg;
     private $estadocivil;
 
+    //construtor
+    public function __construct($vacina, $examepedido, $examevisto, $cirurgia, $receita) {
+        $this -> setVacina($vacina);
+        $this -> setExamepedido($examepedido);
+        $this -> setExamevisto($examevisto);
+        $this -> setCirurgia($cirurgia);
+        $this -> setReceita($receita);;
+    }
     /**
      * Get the value of cod_person
      */ 
