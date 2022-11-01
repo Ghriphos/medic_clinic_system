@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Nov-2022 às 21:58
+-- Tempo de geração: 01-Nov-2022 às 22:01
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -76,7 +76,8 @@ CREATE TABLE `prontuario` (
   `examevisto` varchar(40) DEFAULT NULL,
   `cirurgia` varchar(40) DEFAULT NULL,
   `receita` varchar(100) DEFAULT NULL,
-  `codProntuario` int(11) NOT NULL
+  `codProntuario` int(11) NOT NULL,
+  `cod_person` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -99,7 +100,8 @@ ALTER TABLE `persons`
 -- Índices para tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  ADD PRIMARY KEY (`codProntuario`);
+  ADD PRIMARY KEY (`codProntuario`),
+  ADD KEY `cod_person` (`cod_person`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -122,6 +124,16 @@ ALTER TABLE `persons`
 --
 ALTER TABLE `prontuario`
   MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `prontuario`
+--
+ALTER TABLE `prontuario`
+  ADD CONSTRAINT `prontuario_ibfk_1` FOREIGN KEY (`cod_person`) REFERENCES `persons` (`cod_person`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
