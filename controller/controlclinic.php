@@ -32,7 +32,7 @@ if (isset($acao)) {
                 && is_numeric($street_number) && is_string($street_complement)
                 && is_string($district) && is_numeric($phone)
                 ) {
-                    $clinic = new Clinic($nome,$cnpj,$email,$street,$street_number,$street_complement,$district,$phone);
+                    $clinic = new Clinic($nome,$cnpj,$email,$street,$street_number,$street_complement,$district,$phone,$open_hour,$close_hour);
                     if ($clinic->incluirClinic()){
                         $_SESSION['msg'] = "\n" ."Clínica Incluido com sucesso !!";     
                     } else {

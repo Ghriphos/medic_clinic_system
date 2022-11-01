@@ -45,7 +45,6 @@ class ProntuarioDao
             return false;
         }
     }
-
 }
 
 #Se eu quero usar um atributo de uma classe, devo usar "This"

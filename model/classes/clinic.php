@@ -17,7 +17,7 @@ class Clinic{
     private $close_hour;
 
     //construtor
-    public function _construct($nome, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
+    public function __construct($nome, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
         $this -> setNome($nome);
         $this -> setCnpj($cnpj);
         $this -> setEmail($email);
@@ -28,7 +28,6 @@ class Clinic{
         $this -> setPhone($phone);
         $this -> setOpen_hour($open_hour);
         $this -> setClose_hour($close_hour);
-        
     }
 
     public function incluirClinic(){
