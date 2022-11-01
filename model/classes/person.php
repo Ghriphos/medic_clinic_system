@@ -1,22 +1,26 @@
 <?php
+
+include_once ('../model/dao/personDao.php');
+
 class Person{
     private $cod_person;
-    private $name;
+    private $nome;
     private $phone;
     private $street;
     private $cpf;
     private $birthDate;
-    private $cod_prontuario;
     private $cttemerg;
     private $estadocivil;
 
     //construtor
-    public function __construct($vacina, $examepedido, $examevisto, $cirurgia, $receita) {
-        $this -> setVacina($vacina);
-        $this -> setExamepedido($examepedido);
-        $this -> setExamevisto($examevisto);
-        $this -> setCirurgia($cirurgia);
-        $this -> setReceita($receita);;
+    public function __construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil) {
+        $this -> setNome($nome);
+        $this -> setPhone($phone);
+        $this -> setStreet($street);
+        $this -> setCpf($cpf);
+        $this -> setBirthDate($birthDate);
+        $this -> setCttemerg($cttemerg);
+        $this -> setEstadocivil($estadocivil);;
     }
     /**
      * Get the value of cod_person
@@ -29,9 +33,9 @@ class Person{
     /**
      * Get the value of name
      */ 
-    public function getName()
+    public function getNome()
     {
-        return $this->name;
+        return $this->nome;
     }
 
     /**
@@ -39,9 +43,9 @@ class Person{
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setNome($nome)
     {
-        $this->name = $name;
+        $this->nome = $nome;
 
         return $this;
     }
@@ -92,6 +96,18 @@ class Person{
     public function getCpf()
     {
         return $this->cpf;
+    }
+    
+    /**
+     * Set the value of street
+     *
+     * @return  self
+     */ 
+    public function setCpf($cpf)
+    {
+        $this->cpf = $cpf;
+
+        return $this;
     }
 
     /**
@@ -160,6 +176,15 @@ class Person{
         $this->estadocivil = $estadocivil;
 
         return $this;
+    }
+    public function incluirPerson(){
+        $personDao = new PersonDao();
+        if ($personDao->incluirPerson($this)) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 ?>

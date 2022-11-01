@@ -30,7 +30,7 @@
             <br /><br />
             Digite o CPF: <input type="text" name="cpf" size="20" />
             <br /><br />
-            Digite a Data de nascimento: <input type="text" name="datanasct" size="20" />
+            Digite a Data de nascimento: <input type="text" name="birthdate" size="20" />
             <br /><br />
             Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" />
             <br /><br />

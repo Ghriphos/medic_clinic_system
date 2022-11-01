@@ -9,19 +9,19 @@ if (isset($acao))
 {
     if ($acao == "IncluirPerson")
     {
-        if (isset($nome) && isset($phone) && isset($street) && isset($cpf) && isset($datanasct) && isset($cttemerg) && isset($estadocivil))
+        if (isset($nome) && isset($phone) && isset($street) && isset($cpf) && isset($birthdate) && isset($cttemerg) && isset($estadocivil))
         {
             $nome = htmlspecialchars_decode(strip_tags($nome));
             $phone = htmlspecialchars_decode(strip_tags($phone));
             $street = htmlspecialchars_decode(strip_tags($street));
             $cpf = htmlspecialchars_decode(strip_tags($cpf));
-            $datanasct = htmlspecialchars_decode(strip_tags($datanasct));
+            $birthdate = htmlspecialchars_decode(strip_tags($birthdate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            if (is_string($phone) && is_string($street) && is_string($cpf) && is_string($datanasct) && is_string($cttemerg) && is_string($estadocivil))
+            if (is_string($phone) && is_string($street) && is_string($cpf) && is_string($birthdate) && is_string($cttemerg) && is_string($estadocivil))
             {
-                $person = new Person($nome, $phone, $street, $cpf, $datanasct, $cttemerg, $estadocivil);
+                $person = new Person($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $estadocivil);
                 
                 // $person = new Person();
 
@@ -29,7 +29,7 @@ if (isset($acao))
                 $person -> setPhone($phone);
                 $person  -> setStreet($street);
                 $person  -> setCpf($cpf);
-                $person  -> setDatanasct($datanasct);
+                $person  -> setBirthdate($birthdate);
                 $person  -> setCttemerg($cttemerg);
                 $person  -> setEstadocivil($estadocivil);
 

@@ -24,13 +24,13 @@ class PersonDao
 
     public function incluirPerson($person)
     {
-        $sql = "INSERT INTO person (nome, phone, street, cpf, datanascto, cttemerg, estadocivil) 
+        $sql = "INSERT INTO person (nome, phone, street, cpf, birthdate, cttemerg, estadocivil) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $person->getnome()."','".
         $person->getphone()."','".
         $person->getstreet()."','".
         $person->getcpf()."','".
-        $person->getdatnascto()."','".
+        $person->getbirthdate()."','".
         $person->getcttemerg()."','".
         $person->getestadocivil()."');";
 
