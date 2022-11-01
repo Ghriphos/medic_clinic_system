@@ -31,7 +31,7 @@ class ProntuarioDao
         $prontuario->getExamevisto()."','".
         $prontuario->getcirurgia()."','".
         $prontuario->getreceita()."','".
-        $prontuario->getCodProntuario()."')";
+        $prontuario->getCodProntuario()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)

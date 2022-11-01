@@ -13,15 +13,14 @@ class Prontuario{
 
 
     //construtor
-    public function _construct($vacina, $examepedido, $examevisto, $cirurgia, $receita, $codProntuario) {
-    $this -> setVacina($vacina);
-    $this -> setExamepedido($examepedido);
-    $this -> setExamevisto($examevisto);
-    $this -> setCirurgia($cirurgia);
-    $this -> setReceita($receita);
-    $this -> setCodProntuario($codProntuario);
-    
-}
+    public function __construct($vacina, $examepedido, $examevisto, $cirurgia, $receita, $codProntuario) {
+        $this -> setVacina($vacina);
+        $this -> setExamepedido($examepedido);
+        $this -> setExamevisto($examevisto);
+        $this -> setCirurgia($cirurgia);
+        $this -> setReceita($receita);
+        $this -> setCodProntuario($codProntuario);
+    }
     /**
      * Get the value of vacina
      */ 

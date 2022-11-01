@@ -22,6 +22,15 @@ if (isset($acao))
             if (is_string($vacina) && is_string($examepedido) && is_string($examevisto) && is_string($cirurgia) && is_string($receita) && is_numeric($codProntuario))
             {
                 $prontuario = new Prontuario($vacina, $examepedido, $examevisto, $cirurgia, $receita, $codProntuario);
+                
+                // $prontuario = new Prontuario();
+
+                // $prontuario -> setVacina($vacina);
+                // $prontuario  -> setExamepedido($examepedido);
+                // $prontuario  -> setExamevisto($examevisto);
+                // $prontuario  -> setCirurgia($cirurgia);
+                // $prontuario  -> setReceita($receita);
+                // $prontuario  -> setCodProntuario($codProntuario);
                 if ($prontuario->incluirProntuario())
                 {
                     $_SESSION['msg'] = "\n" . "Prontuário Incluído com sucesso !!";
