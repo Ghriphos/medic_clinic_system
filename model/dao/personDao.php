@@ -2,7 +2,7 @@
 
 #Todos os acessos ao site estarão aqui, fazendo com que qualquer banco possa ser usado
 #Ela foi criada para fazer conexão com o banco de dados
-include_once ('../classes/Person.php');
+include_once ('../classes/Person.php.php');
 
 class PersonDao
 {
