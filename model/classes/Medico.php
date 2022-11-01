@@ -1,10 +1,14 @@
 <?php
 
-    class Medico{
-        private $cargo;
-        private $agenda;
-        private $PHD;
-        private $codMedico;
+    class Medico extends Pessoa{
+        protected $cargo;
+        protected $PHD;
+        
+        function __construct($nome, $phone, $street, $idade, $cpf, $datanasct, $cttemerg, $cargo, $PHD, $codMedico){
+                parent::__construct($nome, $phone, $street, $idade, $cpf, $datanasct, $cttemerg);
+                $this -> setCargo($cargo);
+                $this -> setPHD($PHD); 
+        }
 
         /**
          * Get the value of cargo

@@ -1,13 +1,12 @@
 <?php
-class person{
+class Person{
     private $cod_person;
     private $name;
     private $phone;
     private $street;
-    private $idade;
     private $cpf;
-    private $datanasct;
-    private $prontuario;
+    private $birthDate;
+    private $cod_prontuario;
     private $cttemerg;
     private $estadocivil;
 
@@ -80,26 +79,6 @@ class person{
     }
 
     /**
-     * Get the value of idade
-     */ 
-    public function getIdade()
-    {
-        return $this->idade;
-    }
-
-    /**
-     * Set the value of idade
-     *
-     * @return  self
-     */ 
-    public function setIdade($idade)
-    {
-        $this->idade = $idade;
-
-        return $this;
-    }
-
-    /**
      * Get the value of cpf
      */ 
     public function getCpf()
@@ -112,25 +91,25 @@ class person{
      */ 
     public function getProntuario()
     {
-        return $this->prontuario;
+        return $this->cod_prontuario;
     }
 
     /**
-     * Get the value of datanasct
+     * Get the value of birthDate
      */ 
-    public function getDatanasct()
+    public function getBirthDate()
     {
-        return $this->datanasct;
+        return $this->birthDate;
     }
 
     /**
-     * Set the value of datanasct
+     * Set the value of birthDate
      *
      * @return  self
      */ 
-    public function setDatanasct($datanasct)
+    public function setBirthDate($birthDate)
     {
-        $this->datanasct = $datanasct;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
