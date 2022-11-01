@@ -22,6 +22,7 @@ class Person{
         $this -> setCttemerg($cttemerg);
         $this -> setEstadocivil($estadocivil);;
     }
+
     /**
      * Get the value of cod_person
      */ 
@@ -31,7 +32,7 @@ class Person{
     }
 
     /**
-     * Get the value of name
+     * Get the value of nome
      */ 
     public function getNome()
     {
@@ -39,7 +40,7 @@ class Person{
     }
 
     /**
-     * Set the value of name
+     * Set the value of nome
      *
      * @return  self
      */ 
@@ -97,9 +98,9 @@ class Person{
     {
         return $this->cpf;
     }
-    
+
     /**
-     * Set the value of street
+     * Set the value of cpf
      *
      * @return  self
      */ 
@@ -108,14 +109,6 @@ class Person{
         $this->cpf = $cpf;
 
         return $this;
-    }
-
-    /**
-     * Get the value of prontuario
-     */ 
-    public function getProntuario()
-    {
-        return $this->cod_prontuario;
     }
 
     /**
@@ -137,6 +130,7 @@ class Person{
 
         return $this;
     }
+
 
     /**
      * Get the value of cttemerg
@@ -177,6 +171,7 @@ class Person{
 
         return $this;
     }
+
     public function incluirPerson(){
         $personDao = new PersonDao();
         if ($personDao->incluirPerson($this)) {

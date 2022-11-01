@@ -19,7 +19,7 @@ if (isset($acao))
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            if (is_string($phone) && is_string($street) && is_string($cpf) && is_string($birthdate) && is_string($cttemerg) && is_string($estadocivil))
+            if (is_string($nome) && is_string($phone) && is_string($street) && is_string($cpf) && is_string($birthdate) && is_string($cttemerg) && is_string($estadocivil))
             {
                 $person = new Person($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $estadocivil);
                 
