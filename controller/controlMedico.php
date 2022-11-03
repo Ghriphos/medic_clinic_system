@@ -74,11 +74,11 @@ if (isset($acao)) {
                 && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
                 ) {
                     $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
-                    if ($medico->incluirMedico()){
-                        $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
+                    if ($medico->alterar()){
+                        $_SESSION['msg'] = "\n" ."Médico alterado com sucesso !!";     
                     } else {
 
-                    //    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
+                       $_SESSION['msg'] =  "\n" ."Falha no Alterar! Mensagem de erro: '$msg'";
                     }
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
