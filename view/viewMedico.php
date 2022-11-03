@@ -45,8 +45,8 @@
             Digite o Estado civil: <input type="text" name="estadocivil" size="20" />
             <br /><br />
             <br /><br />
-            <input type="hidden" name="acao" value="incluirMedico">
-            <input type="submit" value="incluirMedico" />
+            <input type="hidden" name="acao" value="IncluirMedico">
+            <input type="submit" value="IncluirMedico" />
         </form>
     </body>
 </html>

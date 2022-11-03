@@ -1,9 +1,9 @@
 <?php
 
 include_once ('../classes/person.php');
-include_once ('../dao/medicoDao');
+include_once ('../dao/medicoDao.php');
 
-final class Medico extends Pessoa{
+final class Medico extends Person{
         protected $cargo;
         protected $PHD;
         protected $codMedico;
@@ -14,7 +14,7 @@ final class Medico extends Pessoa{
                 $this -> setPHD($PHD);          
         }
 
-        public function alterar(){
+        final public function alterar(){
                 $medicoDao = new MedicoDao();
                 if($medicoDao->alterarMedico($this)){
                         return true;
