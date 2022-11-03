@@ -1,5 +1,8 @@
 <?php
 
+include_once ('../classes/person.php');
+include_once ('../dao/medicoDao');
+
     class Medico extends Pessoa{
         protected $cargo;
         protected $PHD;
@@ -11,7 +14,14 @@
                 $this -> setPHD($PHD);         
         }
 
-        public function alterar()
+        public function alterar(){
+                $medicoDao = new MedicoDao();
+                if(medicoDao->alterarProfessor($this)){
+                        return true;
+                }else{
+                return false;
+                }
+        }
 
         /**
          * Get the value of cargo
@@ -92,4 +102,14 @@
 
                 return $this;
         }
+
+        public function incluirMedico(){
+                $medicoDao = new MedicoDao();
+                if ($medicoDao->incluirMedico($this)) {
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
     }
