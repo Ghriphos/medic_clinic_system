@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Nov-2022 às 19:36
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.0.19
+-- Tempo de geração: 01-Nov-2022 às 22:36
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,6 +51,22 @@ INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_n
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `person`
+--
+
+CREATE TABLE `person` (
+  `cod_person` int(11) NOT NULL,
+  `nome` varchar(128) NOT NULL,
+  `phone` varchar(16) DEFAULT NULL,
+  `street` varchar(128) DEFAULT NULL,
+  `birthDate` date DEFAULT NULL,
+  `cttemerg` varchar(16) DEFAULT NULL,
+  `estadocivil` varchar(128) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `prontuario`
 --
 
@@ -75,6 +91,12 @@ ALTER TABLE `clinic`
   ADD PRIMARY KEY (`cod_clinic`);
 
 --
+-- Índices para tabela `person`
+--
+ALTER TABLE `person`
+  ADD PRIMARY KEY (`cod_person`);
+
+--
 -- Índices para tabela `prontuario`
 --
 ALTER TABLE `prontuario`
@@ -90,6 +112,12 @@ ALTER TABLE `prontuario`
 --
 ALTER TABLE `clinic`
   MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `person`
+--
+ALTER TABLE `person`
+  MODIFY `cod_person` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `prontuario`
