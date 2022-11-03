@@ -24,11 +24,17 @@ class MedicoDao
 
     public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, codMedico) 
+        $sql = "INSERT INTO medico (cargo, PHD, codMedico, nome, street, cpf, birthDate, cttemerg, estadocivil) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $medico->getCargo()."','".
         $medico->getPHD()."','".
-        $medico->getcodMedico()."');";
+        $medico->getCodMedico()."','".
+        $medico->getNome()."','".
+        $medico->getStreet()."','".
+        $medico->getCpf()."','".
+        $medico->getBirthDate()."','".
+        $medico->getCttemerg()."','".
+        $medico->getestadocivil()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)

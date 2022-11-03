@@ -165,14 +165,5 @@ abstract class Person{
         return $this;
     }
 
-    public function incluirPerson(){
-        $personDao = new PersonDao();
-        if ($personDao->incluirPerson($this)) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 }
 ?>
