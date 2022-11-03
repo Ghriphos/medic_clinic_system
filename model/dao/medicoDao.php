@@ -2,9 +2,9 @@
 
 #Todos os acessos ao site estarão aqui, fazendo com que qualquer banco possa ser usado
 #Ela foi criada para fazer conexão com o banco de dados
-include_once ('../classes/Person.php');
+include_once ('../classes/Medico.php');
 
-class PersonDao
+class MedicoDao
 {
     private $c; #É o atributo que tem a conexão (Abre ele) com o banco de dados que eu estiver trabalhando, no nosso caso Mysql
     public function __construct()
@@ -22,17 +22,19 @@ class PersonDao
         }
     }
 
-    public function incluirPerson($person)
+    public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO person (nome, phone, street, cpf, birthdate, cttemerg, estadocivil) 
+        $sql = "INSERT INTO medico (cargo, PHD, codMedico, nome, street, cpf, birthDate, cttemerg, estadocivil) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
-        $person->getNome()."','".
-        $person->getPhone()."','".
-        $person->getStreet()."','".
-        $person->getCpf()."','".
-        $person->getBirthDate()."','".
-        $person->getCttemerg()."','".
-        $person->getEstadocivil()."');";
+        $medico->getCargo()."','".
+        $medico->getPHD()."','".
+        $medico->getCodMedico()."','".
+        $medico->getNome()."','".
+        $medico->getStreet()."','".
+        $medico->getCpf()."','".
+        $medico->getBirthDate()."','".
+        $medico->getCttemerg()."','".
+        $medico->getestadocivil()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)

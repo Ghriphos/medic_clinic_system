@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Nov-2022 às 18:03
+-- Tempo de geração: 03-Nov-2022 às 19:36
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.0.19
 
@@ -51,30 +51,6 @@ INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_n
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `person`
---
-
-CREATE TABLE `person` (
-  `cod_person` int(11) NOT NULL,
-  `nome` varchar(128) NOT NULL,
-  `phone` varchar(16) DEFAULT NULL,
-  `street` varchar(128) DEFAULT NULL,
-  `cpf` varchar(22) NOT NULL,
-  `birthDate` date DEFAULT NULL,
-  `cttemerg` varchar(16) DEFAULT NULL,
-  `estadocivil` varchar(128) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `person`
---
-
-INSERT INTO `person` (`cod_person`, `nome`, `phone`, `street`, `cpf`, `birthDate`, `cttemerg`, `estadocivil`) VALUES
-(1, '111', '11', '11', '11', '0000-00-00', '11', '111');
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `prontuario`
 --
 
@@ -99,12 +75,6 @@ ALTER TABLE `clinic`
   ADD PRIMARY KEY (`cod_clinic`);
 
 --
--- Índices para tabela `person`
---
-ALTER TABLE `person`
-  ADD PRIMARY KEY (`cod_person`);
-
---
 -- Índices para tabela `prontuario`
 --
 ALTER TABLE `prontuario`
@@ -120,12 +90,6 @@ ALTER TABLE `prontuario`
 --
 ALTER TABLE `clinic`
   MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de tabela `person`
---
-ALTER TABLE `person`
-  MODIFY `cod_person` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `prontuario`
