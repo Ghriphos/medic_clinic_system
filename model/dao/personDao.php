@@ -30,7 +30,7 @@ class PersonDao
         $person->getPhone()."','".
         $person->getStreet()."','".
         $person->getCpf()."','".
-        $person->getBirthdate()."','".
+        $person->getBirthDate()."','".
         $person->getCttemerg()."','".
         $person->getEstadocivil()."');";
 
