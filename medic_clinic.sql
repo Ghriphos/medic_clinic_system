@@ -128,9 +128,6 @@ ALTER TABLE `prontuario`
 -- Restrições para despejos de tabelas
 --
 
---
--- Limitadores para a tabela `prontuario`
---
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
