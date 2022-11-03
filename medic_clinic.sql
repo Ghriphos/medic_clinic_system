@@ -78,8 +78,7 @@ ALTER TABLE `clinic`
 -- Índices para tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  ADD PRIMARY KEY (`codProntuario`),
-  ADD KEY `cod_person` (`cod_person`);
+  ADD PRIMARY KEY (`codProntuario`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -104,8 +103,6 @@ ALTER TABLE `prontuario`
 --
 -- Limitadores para a tabela `prontuario`
 --
-ALTER TABLE `prontuario`
-  ADD CONSTRAINT `prontuario_ibfk_1` FOREIGN KEY (`cod_person`) REFERENCES `person` (`cod_person`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
