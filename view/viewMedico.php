@@ -26,6 +26,8 @@
             <br /><br />
             Digite o PHD: <input type="text" name="PHD" size="20" />
             <br /><br />
+            Digite o Código do Médico: <input type="text" name="codmedico" size="20" />
+            <br /><br />
             Digite a cirurgia: <input type="text" name="cirurgia" size="20" />
             <br /><br />
             Digite a receita: <input type="text" name="receita" size="20" />

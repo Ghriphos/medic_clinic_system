@@ -24,14 +24,15 @@ if (isset($acao)) {
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
+            $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($idade)
                 && is_numeric($cpf) && is_string($datanasct)
-                && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
+                && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD) && is_numeric($codMedico)
                 ) {
-                    $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD);
+                    $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
                     if ($medico->incluirMedico()){
                         $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
                     } else {
@@ -72,7 +73,7 @@ if (isset($acao)) {
                 && is_numeric($cpf) && is_string($datanasct)
                 && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
                 ) {
-                    $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD);
+                    $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
                     if ($medico->incluirMedico()){
                         $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
                     } else {
