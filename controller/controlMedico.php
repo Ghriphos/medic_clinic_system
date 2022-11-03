@@ -31,9 +31,9 @@ if (isset($acao)) {
                 && is_numeric($cpf) && is_string($datanasct)
                 && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
                 ) {
-                    $clinic = new Medico($nome, $phone, $street, $idade, $cpf, $datanasct, $cttemerg, $cargo, $PHD);
-                    if ($clinic->incluirMedico()){
-                        $_SESSION['msg'] = "\n" ."Clínica Incluido com sucesso !!";     
+                    $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD);
+                    if ($medico->incluirMedico()){
+                        $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
                     } else {
 
                     //    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";

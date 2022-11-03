@@ -8,11 +8,10 @@ final class Medico extends Pessoa{
         protected $PHD;
         protected $codMedico;
         
-        function __construct($nome, $phone, $street, $idade, $cpf, $birthdate, $cttemerg, $cargo, $PHD, $codMedico){
+        function __construct($nome, $phone, $street, $idade, $cpf, $birthdate, $cttemerg, $cargo, $PHD){
                 parent::__construct($nome, $phone, $street, $idade, $cpf, $birthdate, $cttemerg);
                 $this -> setCargo($cargo);
-                $this -> setPHD($PHD);    
-                $this -> setCodMedico($codMedico);         
+                $this -> setPHD($PHD);          
         }
 
         public function alterar(){
