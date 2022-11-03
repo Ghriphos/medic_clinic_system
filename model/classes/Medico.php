@@ -3,12 +3,15 @@
     class Medico extends Pessoa{
         protected $cargo;
         protected $PHD;
+        protected $codMedico;
         
-        function __construct($nome, $phone, $street, $idade, $cpf, $datanasct, $cttemerg, $cargo, $PHD, $codMedico){
-                parent::__construct($nome, $phone, $street, $idade, $cpf, $datanasct, $cttemerg);
+        function __construct($nome, $phone, $street, $idade, $cpf, $birthdate, $cttemerg, $cargo, $PHD, $codMedico){
+                parent::__construct($nome, $phone, $street, $idade, $cpf, $birthdate, $cttemerg);
                 $this -> setCargo($cargo);
-                $this -> setPHD($PHD); 
+                $this -> setPHD($PHD);         
         }
+
+        public function alterar()
 
         /**
          * Get the value of cargo
@@ -76,5 +79,17 @@
         public function getCodMedico()
         {
                 return $this->codMedico;
+        }
+
+        /**
+         * Set the value of codMedico
+         *
+         * @return  self
+         */ 
+        public function setCodMedico($codMedico)
+        {
+                $this->codMedico = $codMedico;
+
+                return $this;
         }
     }

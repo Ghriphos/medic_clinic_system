@@ -2,15 +2,15 @@
 
 include_once ('../model/dao/personDao.php');
 
-class Person{
-    private $cod_person;
-    private $nome;
-    private $phone;
-    private $street;
-    private $cpf;
-    private $birthDate;
-    private $cttemerg;
-    private $estadocivil;
+abstract class Person{
+    protected $cod_person;
+    protected $nome;
+    protected $phone;
+    protected $street;
+    protected $cpf;
+    protected $birthDate;
+    protected $cttemerg;
+    protected $estadocivil;
 
     //construtor
     public function __construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil) {
@@ -22,7 +22,9 @@ class Person{
         $this -> setCttemerg($cttemerg);
         $this -> setEstadocivil($estadocivil);;
     }
+    public function alterar(){
 
+    }
     /**
      * Get the value of cod_person
      */ 
