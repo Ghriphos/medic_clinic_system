@@ -3,7 +3,6 @@
 include_once ('../model/dao/personDao.php');
 
 abstract class Person{
-    protected $cod_person;
     protected $nome;
     protected $phone;
     protected $street;
@@ -25,14 +24,6 @@ abstract class Person{
     public function alterar(){
 
     }
-    /**
-     * Get the value of cod_person
-     */ 
-    public function getCod_person()
-    {
-        return $this->cod_person;
-    }
-
     /**
      * Get the value of nome
      */ 

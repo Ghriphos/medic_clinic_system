@@ -104,12 +104,12 @@ include_once ('../dao/medicoDao');
         }
 
         public function incluirMedico(){
-                $medicoDao = new MedicoDao();
-                if ($medicoDao->incluirMedico($this)) {
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
+        $medicoDao = new MedicoDao();
+        if ($medicoDao->incluirMedico($this)) {
+                return true;
+        }
+        else{
+                return false;
+        }
+        }
     }
