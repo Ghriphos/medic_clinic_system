@@ -11,7 +11,7 @@ if (isset($acao)) {
             isset($nome) 
             && isset($phone) && isset($street)
             && isset($idade) && isset($cpf)
-            && isset($datanasct) && isset($cttemerg)
+            && isset($birthDate) && isset($cttemerg)
             && isset($cargo) && isset($PHD)
             && isset($codMedico)
         ) {
@@ -20,7 +20,7 @@ if (isset($acao)) {
             $street = htmlspecialchars_decode(strip_tags($street));
             $idade = htmlspecialchars_decode(strip_tags($idade));
             $cpf = htmlspecialchars_decode(strip_tags($cpf));
-            $datanasct = htmlspecialchars_decode(strip_tags($datanasct));
+            $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
@@ -29,7 +29,7 @@ if (isset($acao)) {
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($idade)
-                && is_numeric($cpf) && is_string($datanasct)
+                && is_numeric($cpf) && is_string($birthDate)
                 && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD) && is_numeric($codMedico)
                 ) {
                     $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
@@ -53,7 +53,7 @@ if (isset($acao)) {
             isset($nome) 
             && isset($phone) && isset($street)
             && isset($idade) && isset($cpf)
-            && isset($datanasct) && isset($cttemerg)
+            && isset($birthDate) && isset($cttemerg)
             && isset($cargo) && isset($PHD)
             && isset($codMedico)
         ) {
@@ -62,7 +62,7 @@ if (isset($acao)) {
             $street = htmlspecialchars_decode(strip_tags($street));
             $idade = htmlspecialchars_decode(strip_tags($idade));
             $cpf = htmlspecialchars_decode(strip_tags($cpf));
-            $datanasct = htmlspecialchars_decode(strip_tags($datanasct));
+            $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
@@ -70,7 +70,7 @@ if (isset($acao)) {
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($idade)
-                && is_numeric($cpf) && is_string($datanasct)
+                && is_numeric($cpf) && is_string($birthDate)
                 && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
                 ) {
                     $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
