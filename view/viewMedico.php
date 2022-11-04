@@ -75,8 +75,8 @@
             Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" >
             <br /><br />
             <br /><br />
-            <input type="hidden" name="acao" value="IncluirMedico">
-            <input type="submit" value="IncluirMedico" />
+            <input type="hidden" name="acao" value="AlterarMedico">
+            <input type="submit" value="AlterarMedico" />
         </form>
     </body>
 </html>

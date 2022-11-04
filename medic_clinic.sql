@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Nov-2022 às 22:36
+-- Tempo de geração: 04-Nov-2022 às 02:25
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -46,22 +46,25 @@ CREATE TABLE `clinic` (
 --
 
 INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_number`, `street_complement`, `district`, `phone`, `open_hour`, `close_hour`) VALUES
-(4, '123', 123, '123', '123', 123, '123', '123', '123', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(4, '123', 123, '123', '123', 123, '123', '123', '123', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, '11', 11, '11', '111', 11, '11', '11', '11', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `person`
+-- Estrutura da tabela `medico`
 --
 
-CREATE TABLE `person` (
-  `cod_person` int(11) NOT NULL,
-  `nome` varchar(128) NOT NULL,
-  `phone` varchar(16) DEFAULT NULL,
-  `street` varchar(128) DEFAULT NULL,
-  `birthDate` date DEFAULT NULL,
-  `cttemerg` varchar(16) DEFAULT NULL,
-  `estadocivil` varchar(128) DEFAULT NULL
+CREATE TABLE `medico` (
+  `cargo` varchar(20) DEFAULT NULL,
+  `PHD` varchar(20) DEFAULT NULL,
+  `codmedico` int(11) NOT NULL,
+  `nome` varchar(20) DEFAULT NULL,
+  `phone` int(30) DEFAULT NULL,
+  `street` varchar(20) DEFAULT NULL,
+  `cpf` int(20) DEFAULT NULL,
+  `birthDate` int(14) DEFAULT NULL,
+  `cttemerg` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -76,9 +79,15 @@ CREATE TABLE `prontuario` (
   `examevisto` varchar(40) DEFAULT NULL,
   `cirurgia` varchar(40) DEFAULT NULL,
   `receita` varchar(100) DEFAULT NULL,
-  `codProntuario` int(11) NOT NULL,
-  `cod_person` int(11) DEFAULT NULL
+  `codProntuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `prontuario`
+--
+
+INSERT INTO `prontuario` (`vacina`, `examepedido`, `examevisto`, `cirurgia`, `receita`, `codProntuario`) VALUES
+('11', '11', '11', '11', '11', 79);
 
 --
 -- Índices para tabelas despejadas
@@ -91,10 +100,10 @@ ALTER TABLE `clinic`
   ADD PRIMARY KEY (`cod_clinic`);
 
 --
--- Índices para tabela `person`
+-- Índices para tabela `medico`
 --
-ALTER TABLE `person`
-  ADD PRIMARY KEY (`cod_person`);
+ALTER TABLE `medico`
+  ADD PRIMARY KEY (`codmedico`);
 
 --
 -- Índices para tabela `prontuario`
@@ -110,24 +119,19 @@ ALTER TABLE `prontuario`
 -- AUTO_INCREMENT de tabela `clinic`
 --
 ALTER TABLE `clinic`
-  MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `person`
+-- AUTO_INCREMENT de tabela `medico`
 --
-ALTER TABLE `person`
-  MODIFY `cod_person` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `medico`
+  MODIFY `codmedico` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
-
---
--- Restrições para despejos de tabelas
---
-
+  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
