@@ -42,9 +42,7 @@
             <br /><br />
             Digite a Data de nascimento: <input type="text" name="birthDate" size="20" />
             <br /><br />
-            Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" />
-            <br /><br />
-            Digite o Estado civil: <input type="text" name="estadocivil" size="20" />
+            Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" >
             <br /><br />
             <br /><br />
             <input type="hidden" name="acao" value="IncluirMedico">
