@@ -1,7 +1,5 @@
 <?php
 
-include_once ('../model/dao/personDao.php');
-
 abstract class Person{
     protected $nome;
     protected $phone;

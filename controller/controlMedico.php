@@ -11,28 +11,27 @@ if (isset($acao)) {
             isset($nome) 
             && isset($phone) && isset($street)
             && isset($idade) && isset($cpf)
-            && isset($datanasct) && isset($cttemerg)
+            && isset($birthDate) && isset($cttemerg)
             && isset($cargo) && isset($PHD)
-            && isset($codMedico)
         ) {
             $nome = htmlspecialchars_decode(strip_tags($nome));
             $phone = htmlspecialchars_decode(strip_tags($phone));
             $street = htmlspecialchars_decode(strip_tags($street));
             $idade = htmlspecialchars_decode(strip_tags($idade));
             $cpf = htmlspecialchars_decode(strip_tags($cpf));
-            $datanasct = htmlspecialchars_decode(strip_tags($datanasct));
+            $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
-            $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($idade)
-                && is_numeric($cpf) && is_string($datanasct)
-                && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD) && is_numeric($codMedico)
+                && is_numeric($cpf) && is_string($birthDate)
+                && is_numeric($cttemerg) && is_numeric($cargo)
+                && is_numeric($PHD) && is_numeric($codMedico)
                 ) {
-                    $medico= new Medico($nome, $phone, $street, $idade, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
+                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
                     if ($medico->incluirMedico()){
                         $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
                     } else {
@@ -60,10 +59,11 @@ if (isset($acao)) {
             $phone = htmlspecialchars_decode(strip_tags($phone));
             $street = htmlspecialchars_decode(strip_tags($street));
             $cpf = htmlspecialchars_decode(strip_tags($cpf));
-            $datanasct = htmlspecialchars_decode(strip_tags($datanasct));
+            $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
+            $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             
             if (
                 is_string($nome)&& is_numeric($phone)
@@ -72,11 +72,11 @@ if (isset($acao)) {
                 && is_string($street)
                 ) {
                     $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
-                    if ($medico->incluirMedico()){
-                        $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
+                    if ($medico->alterarMedico()){
+                        $_SESSION['msg'] = "\n" ."Médico alterado com sucesso !!";     
                     } else {
 
-                    //    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
+                       $_SESSION['msg'] =  "\n" ."Falha no Alterar! Mensagem de erro: '$msg'";
                     }
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";

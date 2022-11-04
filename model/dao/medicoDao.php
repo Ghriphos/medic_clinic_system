@@ -24,17 +24,16 @@ class MedicoDao
 
     public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, codmedico, nome, street, cpf, birthDate, cttemerg, estadocivil) 
+        $sql = "INSERT INTO medico (cargo, PHD, nome, phone, street, cpf, birthDate, cttemerg) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $medico->getCargo()."','".
         $medico->getPHD()."','".
-        $medico->getCodMedico()."','".
         $medico->getNome()."','".
         $medico->getStreet()."','".
         $medico->getCpf()."','".
         $medico->getBirthDate()."','".
         $medico->getCttemerg()."','".
-        $medico->getestadocivil()."');";
+        $medico->getPhone()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)
@@ -51,7 +50,7 @@ class MedicoDao
     }
 
     public function alterarMedico($medico){
-        $sql = "UPDATE medico SET (cargo, PHD, nome, street, cpf, birthDate, cttemerg, estadocivil) 
+        $sql = "UPDATE medico SET (cargo, PHD, nome, street, cpf, birthDate, cttemerg, phone) 
         VALUES ('" .
         $medico->getCargo()."','".
         $medico->getPHD()."','".
@@ -63,12 +62,12 @@ class MedicoDao
         $medico->getestadocivil()."')
         WHERE codMedico = '".$medico->getCodMedico() ."';";
 
-        $result = mysqli_query($this->c, $sql);
-        if (mysqli_affected_rows($this->c) == 0) {
-            return false;
-        }else{
-            return true;
-        }
+    //     $result = mysqli_query($this->c, $sql);
+    //     if (mysqli_affected_rows($this->c) == 0) {
+    //         return false;
+    //     }else{
+    //         return true;
+    //     }
     }
 
 }
@@ -76,12 +75,12 @@ class MedicoDao
 #Se eu quero usar um atributo de uma classe, devo usar "This"
 
 ?>
-        <!-- "cargo = '".$medico->getCargo()."',".
-        "PHD = '".$medico.>getCargo()."',".
-        "nome = '".$medico.>getCargo()."',".
-        "street = '".$medico.>getCargo()."',".
-        "cpf = '".$medico.>getCargo()."',".
-        "birthDate = '".$medico.>getCargo()."',".
-        "cttemerg = '".$medico.>getCargo()."',".
-        "estadocivil = '".$medico.>getCargo()."'".
-        " WHERE " . "codMedico" = '".$medico->getCodMedico()."';"; -->
+        // <!-- "cargo = '".$medico->getCargo()."',".
+        // "PHD = '".$medico.>getCargo()."',".
+        // "nome = '".$medico.>getCargo()."',".
+        // "street = '".$medico.>getCargo()."',".
+        // "cpf = '".$medico.>getCargo()."',".
+        // "birthDate = '".$medico.>getCargo()."',".
+        // "cttemerg = '".$medico.>getCargo()."',".
+        // "estadocivil = '".$medico.>getCargo()."'".
+        // " WHERE " . "codMedico" = '".$medico->getCodMedico()."';"; -->

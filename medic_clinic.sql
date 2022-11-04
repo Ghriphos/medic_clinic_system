@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Nov-2022 às 22:36
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 04-Nov-2022 às 02:51
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,17 +51,19 @@ INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_n
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `person`
+-- Estrutura da tabela `medico`
 --
 
-CREATE TABLE `person` (
-  `cod_person` int(11) NOT NULL,
+CREATE TABLE `medico` (
+  `cod_medico` int(11) NOT NULL,
   `nome` varchar(128) NOT NULL,
-  `phone` varchar(16) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
   `street` varchar(128) DEFAULT NULL,
-  `birthDate` date DEFAULT NULL,
-  `cttemerg` varchar(16) DEFAULT NULL,
-  `estadocivil` varchar(128) DEFAULT NULL
+  `birthdate` date DEFAULT NULL,
+  `cttemerg` varchar(50) DEFAULT NULL,
+  `cargo` varchar(50) DEFAULT NULL,
+  `PHD` int(11) DEFAULT NULL,
+  `cpf` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -91,10 +93,10 @@ ALTER TABLE `clinic`
   ADD PRIMARY KEY (`cod_clinic`);
 
 --
--- Índices para tabela `person`
+-- Índices para tabela `medico`
 --
-ALTER TABLE `person`
-  ADD PRIMARY KEY (`cod_person`);
+ALTER TABLE `medico`
+  ADD PRIMARY KEY (`cod_medico`);
 
 --
 -- Índices para tabela `prontuario`
@@ -113,21 +115,16 @@ ALTER TABLE `clinic`
   MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `person`
+-- AUTO_INCREMENT de tabela `medico`
 --
-ALTER TABLE `person`
-  MODIFY `cod_person` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `medico`
+  MODIFY `cod_medico` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `prontuario`
 --
 ALTER TABLE `prontuario`
   MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
-
---
--- Restrições para despejos de tabelas
---
-
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
