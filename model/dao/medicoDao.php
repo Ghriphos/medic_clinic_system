@@ -61,7 +61,7 @@ class MedicoDao
         $medico->getBirthDate()."','".
         $medico->getCttemerg()."','".
         $medico->getestadocivil()."')
-        " WHERE " . " codMedico = '".$medico->getCodMedico()."';";
+        WHERE codMedico = '".$medico->getCodMedico() ."';";
 
         $result = mysqli_query($this->c, $sql);
         if (mysqli_affected_rows($this->c) == 0) {
