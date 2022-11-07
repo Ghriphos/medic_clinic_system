@@ -39,5 +39,27 @@ class ClinicDao{
             return false;
         }
     }   
+
+    public function alterarClinic($clinic){
+        $sql=
+        "UPDATE clinic SET ".
+        "cnpj = '".$clinic->getCnpj()."',".
+        "email = '".$clinic->getEmail()."',".
+        "street = '".$clinic->getStreet()."',".
+        "street_number = '".$clinic->getStreet_number()."',".
+        "street_complement = '".$clinic->getStreet_complement()."',".
+        "district = '".$clinic->getDistrict()."',".
+        "phone = '".$clinic->getPhone()."',".
+        "open_hour = '".$clinic->getOpen_hour()."',".
+        "close_hour = '".$clinic->getClose_hour()."'".
+        " WHERE ". " nome = '".$clinic->getNome()."';"; 
+
+        $result = mysqli_query($this->c,$sql);
+        if (mysqli_affected_rows($this->c) == 0) {
+            return false;
+        }else {
+            return true;
+        }
+    }
 }
 ?>
