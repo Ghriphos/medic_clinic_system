@@ -17,7 +17,8 @@ class Clinic{
     private $close_hour;
 
     //construtor
-    public function __construct($nome, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
+    public function __construct($cod_clinic, $nome, $cnpj, $email, $street, $street_number, $street_complement, $district, $phone, $open_hour, $close_hour) {
+        $this -> setCod_clinic($cod_clinic);
         $this -> setNome($nome);
         $this -> setCnpj($cnpj);
         $this -> setEmail($email);
@@ -33,6 +34,15 @@ class Clinic{
     public function incluirClinic(){
         $ClinicDao = new ClinicDao;
         if($ClinicDao -> incluirClinic($this)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function alterarClinic(){
+        $ClinicDao = new ClinicDao;
+        if($ClinicDao -> alterarClinic($this)){
             return true;
         }else{
             return false;
@@ -243,6 +253,18 @@ class Clinic{
     public function setClose_hour($close_hour)
     {
         $this->close_hour = $close_hour;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of cod_clinic
+     *
+     * @return  self
+     */ 
+    public function setCod_clinic($cod_clinic)
+    {
+        $this->cod_clinic = $cod_clinic;
 
         return $this;
     }

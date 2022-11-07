@@ -33,8 +33,9 @@ if (isset($acao)) {
                 
             }
         }
+        $path = $_SERVER['HTTP_REFERER'];
+        header("Location: $path");
     }
 }
-    $path = $_SERVER['HTTP_REFERER'];
-    header("Location: $path");
+    
 ?>

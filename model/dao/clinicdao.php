@@ -18,7 +18,8 @@ class ClinicDao{
     }
 
     public function IncluirClinic($clinic){
-        $sql = "INSERT INTO clinic (nome, cnpj, email, street, street_number, street_complement, district, phone, open_hour, close_hour) VALUES ('". /* aspa simples (') é para concatenar o valor que está dentro da "" (concatenar tipo o .)*/
+        $sql = "INSERT INTO clinic (cod_clinic, nome, cnpj, email, street, street_number, street_complement, district, phone, open_hour, close_hour) VALUES ('". /* aspa simples (') é para concatenar o valor que está dentro da "" (concatenar tipo o .)*/
+        $clinic -> getCod_clinic()."','".
         $clinic -> getNome()."','".
         $clinic -> getCnpj()."','".
         $clinic -> getEmail()."','".
@@ -39,5 +40,27 @@ class ClinicDao{
             return false;
         }
     }   
+
+    public function alterarClinic($clinic){
+        $sql=
+        "UPDATE clinic SET ".
+        "nome = '".$clinic->getNome()."',".
+        "cnpj = '".$clinic->getCnpj()."',".
+        "email = '".$clinic->getEmail()."',".
+        "street = '".$clinic->getStreet()."',".
+        "street_number = '".$clinic->getStreet_number()."',".
+        "district = '".$clinic->getDistrict()."',".
+        "phone = '".$clinic->getPhone()."',".
+        "open_hour = '".$clinic->getOpen_hour()."',".
+        "close_hour = '".$clinic->getClose_hour()."'".
+        " WHERE ". " cod_clinic = '".$clinic->getCod_clinic()."';"; 
+
+        $result = mysqli_query($this->c,$sql);
+        if (mysqli_affected_rows($this->c) == 0) {
+            return false;
+        }else {
+            return true;
+        }
+    }
 }
 ?>
