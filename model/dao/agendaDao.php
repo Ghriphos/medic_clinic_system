@@ -39,7 +39,7 @@ class AgendaDao{
         "UPDATE agenda SET ".
         "dataehora = '".$agenda->getDataehora()."',".
         "stats = '".$agenda->getStats()."',".
-        "descricao = '".$agenda->getDescricao()."',".
+        "descricao = '".$agenda->getDescricao()."'".
         " WHERE ". " codConsulta = '".$agenda->getCodConsulta()."';"; 
 
         $result = mysqli_query($this->c,$sql);
