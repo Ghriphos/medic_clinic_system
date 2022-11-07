@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2022 às 13:01
+-- Tempo de geração: 07-Nov-2022 às 13:27
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -40,7 +40,10 @@ CREATE TABLE `agenda` (
 
 INSERT INTO `agenda` (`dataehora`, `stats`, `descricao`, `codConsulta`) VALUES
 ('0000-00-00 00:00:00', '44', '44', 44),
-('0000-00-00 00:00:00', '44', '33', 44);
+('0000-00-00 00:00:00', '44', '33', 44),
+('0000-00-00 00:00:00', '55', '55', 123),
+('0000-00-00 00:00:00', '33', '33', 333),
+('0000-00-00 00:00:00', '99', '99', 777);
 
 -- --------------------------------------------------------
 
@@ -111,7 +114,8 @@ CREATE TABLE `prontuario` (
 
 INSERT INTO `prontuario` (`vacina`, `examepedido`, `examevisto`, `cirurgia`, `receita`, `codProntuario`) VALUES
 ('11', '11', '11', '11', '11', 79),
-('33', '33', '33', '33', '33', 80);
+('33', '33', '33', '33', '33', 80),
+('77', '88', '88', '88', '88', 81);
 
 --
 -- Índices para tabelas despejadas
@@ -155,7 +159,7 @@ ALTER TABLE `medico`
 -- AUTO_INCREMENT de tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
