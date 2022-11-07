@@ -36,5 +36,23 @@
             <input type="hidden" name="acao" value="IncluirPront">
             <input type="submit" value="IncluirPront" />
         </form>
+
+        <form action="../controller/controlProntuario.php" method="post">
+            Alterar Prontuario
+            <br /><br />
+            Digite a Vacina: <input type="text" name="vacina" size="20" />
+            <br /><br />
+            Digite o Exame pedido: <input type="text" name="examepedido" size="20" />
+            <br /><br />
+            Digite o Exame visto: <input type="text" name="examevisto" size="40" />
+            <br /><br />
+            Digite a cirurgia: <input type="text" name="cirurgia" size="20" />
+            <br /><br />
+            Digite a receita: <input type="text" name="receita" size="20" />
+            <br /><br />
+            <br /><br />
+            <input type="hidden" name="acao" value="AlterarPront">
+            <input type="submit" value="AlterarPront" />
+        </form>
     </body>
 </html>
