@@ -15,11 +15,12 @@ final class Medico extends Person{
                 $this -> setCodMedico($codMedico);     
         }
 
-        final public function alterar(){
+        public function incluirMedico(){
                 $medicoDao = new MedicoDao();
-                if($medicoDao->alterarMedico($this)){
+                if ($medicoDao->incluirMedico($this)) {
                         return true;
-                }else{
+                }
+                else{
                         return false;
                 }
         }
@@ -83,14 +84,6 @@ final class Medico extends Person{
 
                 return $this;
         }
+        }
 
-        public function incluirMedico(){
-        $medicoDao = new MedicoDao();
-        if ($medicoDao->incluirMedico($this)) {
-                return true;
-        }
-        else{
-                return false;
-        }
-        }
-    }
+        ?>

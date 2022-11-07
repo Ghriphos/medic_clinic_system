@@ -48,39 +48,8 @@ class MedicoDao
             return false;
         }
     }
-
-    public function alterarMedico($medico){
-        $sql = "UPDATE medico SET (cargo, PHD, nome, street, cpf, birthDate, cttemerg, phone) 
-        VALUES ('" .
-        $medico->getCargo()."','".
-        $medico->getPHD()."','".
-        $medico->getNome()."','".
-        $medico->getStreet()."','".
-        $medico->getCpf()."','".
-        $medico->getBirthDate()."','".
-        $medico->getCttemerg()."','".
-        $medico->getestadocivil()."')
-        WHERE codMedico = '".$medico->getCodMedico() ."';";
-
-    //     $result = mysqli_query($this->c, $sql);
-    //     if (mysqli_affected_rows($this->c) == 0) {
-    //         return false;
-    //     }else{
-    //         return true;
-    //     }
-    }
-
 }
 
 #Se eu quero usar um atributo de uma classe, devo usar "This"
 
 ?>
-        // <!-- "cargo = '".$medico->getCargo()."',".
-        // "PHD = '".$medico.>getCargo()."',".
-        // "nome = '".$medico.>getCargo()."',".
-        // "street = '".$medico.>getCargo()."',".
-        // "cpf = '".$medico.>getCargo()."',".
-        // "birthDate = '".$medico.>getCargo()."',".
-        // "cttemerg = '".$medico.>getCargo()."',".
-        // "estadocivil = '".$medico.>getCargo()."'".
-        // " WHERE " . "codMedico" = '".$medico->getCodMedico()."';"; -->

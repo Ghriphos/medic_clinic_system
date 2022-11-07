@@ -39,15 +39,6 @@ class Clinic{
         }
     }
 
-    final public function alterarClinic(){
-        $ClinicDao = new ClinicDao();
-        if ($ClinicDao->alterarClinic($this)) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-
     /**
      * Get the value of cod_clinic
      */ 
