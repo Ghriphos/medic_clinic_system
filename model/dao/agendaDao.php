@@ -22,7 +22,7 @@ class AgendaDao{
         $agenda -> getDataehora()."','".
         $agenda -> getStats()."','".
         $agenda -> getDescricao()."','".
-        $agenda -> getcodConsulta()."')";
+        $agenda -> getCodConsulta()."')";
         $result = mysqli_query($this->c, $sql);
         if ($result == true){
             echo "\n" . "Execução bem sucedida do INSERT! ";
@@ -33,5 +33,21 @@ class AgendaDao{
             return false;
         }
     }   
+
+    public function alterarAgenda($agenda){
+        $sql=
+        "UPDATE agenda SET ".
+        "dataehora = '".$agenda->getDataehora()."',".
+        "stats = '".$agenda->getStats()."',".
+        "descricao = '".$agenda->getDescricao()."',".
+        " WHERE ". " codConsulta = '".$agenda->getCodConsulta()."';"; 
+
+        $result = mysqli_query($this->c,$sql);
+        if (mysqli_affected_rows($this->c) == 0) {
+            return false;
+        }else {
+            return true;
+        }
+    }
 }
 ?>

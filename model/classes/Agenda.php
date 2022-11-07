@@ -26,6 +26,15 @@ class Agenda{
         }
     }
 
+    public function alterarAgenda(){
+        $AgendaDao = new AgendaDao;
+        if($AgendaDao -> alterarAgenda($this)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     /**
      * Get the value of dataehora
      */ 

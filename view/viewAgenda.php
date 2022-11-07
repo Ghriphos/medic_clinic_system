@@ -23,7 +23,22 @@
     <br /><br />
     Digite o Codigo da consulta: <input type="text" name="codConsulta" size="20" />
     <br /><br />
-    <br /><br />
     <input type="hidden" name="acao" value="IncluirAgenda">
     <input type="submit" value="IncluirAgenda" />
+</form>
+
+<form action="../controller/controlAgenda.php" method="post">
+    <br /><br />
+    Alterar Agenda
+    <br /><br />
+    Digite a Data e hora: <input type="text" name="dataehora" size="20" />
+    <br /><br />
+    Digite o Status: <input type="text" name="stats" size="20" />
+    <br /><br />
+    Digite a Descricao: <input type="text" name="descricao" size="40" />
+    <br /><br />
+    Digite o Codigo da consulta: <input type="text" name="codConsulta" size="20" />
+    <br /><br />
+    <input type="hidden" name="acao" value="AlterarAgenda">
+    <input type="submit" value="AlterarAgenda" />
 </form>
