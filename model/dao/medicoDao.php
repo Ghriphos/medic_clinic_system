@@ -24,11 +24,10 @@ class MedicoDao
 
     public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, codmedico, nome, phone, street, cpf, birthDate, cttemerg) 
+        $sql = "INSERT INTO medico (cargo, PHD, nome, phone, street, cpf, birthDate, cttemerg) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $medico->getCargo()."','".
         $medico->getPHD()."','".
-        $medico->getCodMedico()."','".
         $medico->getNome()."','".
         $medico->getStreet()."','".
         $medico->getCpf()."','".
@@ -50,18 +49,18 @@ class MedicoDao
         }
     }
 
-    // public function alterarMedico($medico){
-    //     $sql = "UPDATE medico SET (cargo, PHD, nome, street, cpf, birthDate, cttemerg, phone) 
-    //     VALUES ('" .
-    //     $medico->getCargo()."','".
-    //     $medico->getPHD()."','".
-    //     $medico->getNome()."','".
-    //     $medico->getStreet()."','".
-    //     $medico->getCpf()."','".
-    //     $medico->getBirthDate()."','".
-    //     $medico->getCttemerg()."','".
-    //     $medico->getPhone()."')
-    //     " WHERE " . " codMedico = '".$medico->getCodMedico()."';";
+    public function alterarMedico($medico){
+        $sql = "UPDATE medico SET (cargo, PHD, nome, street, cpf, birthDate, cttemerg, phone) 
+        VALUES ('" .
+        $medico->getCargo()."','".
+        $medico->getPHD()."','".
+        $medico->getNome()."','".
+        $medico->getStreet()."','".
+        $medico->getCpf()."','".
+        $medico->getBirthDate()."','".
+        $medico->getCttemerg()."','".
+        $medico->getestadocivil()."')
+        WHERE codMedico = '".$medico->getCodMedico() ."';";
 
     //     $result = mysqli_query($this->c, $sql);
     //     if (mysqli_affected_rows($this->c) == 0) {
@@ -69,7 +68,7 @@ class MedicoDao
     //     }else{
     //         return true;
     //     }
-    // }
+    }
 
 }
 
