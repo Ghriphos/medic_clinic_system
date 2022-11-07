@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Nov-2022 às 02:51
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 07-Nov-2022 às 13:01
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `medic_clinic`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `agenda`
+--
+
+CREATE TABLE `agenda` (
+  `dataehora` datetime DEFAULT NULL,
+  `stats` varchar(40) DEFAULT NULL,
+  `descricao` varchar(40) DEFAULT NULL,
+  `codConsulta` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `agenda`
+--
+
+INSERT INTO `agenda` (`dataehora`, `stats`, `descricao`, `codConsulta`) VALUES
+('0000-00-00 00:00:00', '44', '44', 44),
+('0000-00-00 00:00:00', '44', '33', 44);
 
 -- --------------------------------------------------------
 
@@ -46,7 +67,10 @@ CREATE TABLE `clinic` (
 --
 
 INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_number`, `street_complement`, `district`, `phone`, `open_hour`, `close_hour`) VALUES
-(4, '123', 123, '123', '123', 123, '123', '123', '123', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(4, '444', 444, '444', '444', 444, '123', '444', '444', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, '11', 11, '11', '111', 11, '11', '11', '11', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, '133', 33, '33', '33', 33, '33', '33', '33', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(44, '44', 44, '44', '44', 44, '44', '44', '44', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -55,15 +79,15 @@ INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_n
 --
 
 CREATE TABLE `medico` (
-  `cod_medico` int(11) NOT NULL,
-  `nome` varchar(128) NOT NULL,
-  `phone` varchar(50) DEFAULT NULL,
-  `street` varchar(128) DEFAULT NULL,
-  `birthdate` date DEFAULT NULL,
-  `cttemerg` varchar(50) DEFAULT NULL,
-  `cargo` varchar(50) DEFAULT NULL,
-  `PHD` int(11) DEFAULT NULL,
-  `cpf` int(11) DEFAULT NULL
+  `cargo` varchar(20) DEFAULT NULL,
+  `PHD` varchar(20) DEFAULT NULL,
+  `codmedico` int(11) NOT NULL,
+  `nome` varchar(20) DEFAULT NULL,
+  `phone` int(30) DEFAULT NULL,
+  `street` varchar(20) DEFAULT NULL,
+  `cpf` int(20) DEFAULT NULL,
+  `birthDate` int(14) DEFAULT NULL,
+  `cttemerg` int(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -78,9 +102,16 @@ CREATE TABLE `prontuario` (
   `examevisto` varchar(40) DEFAULT NULL,
   `cirurgia` varchar(40) DEFAULT NULL,
   `receita` varchar(100) DEFAULT NULL,
-  `codProntuario` int(11) NOT NULL,
-  `cod_person` int(11) DEFAULT NULL
+  `codProntuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `prontuario`
+--
+
+INSERT INTO `prontuario` (`vacina`, `examepedido`, `examevisto`, `cirurgia`, `receita`, `codProntuario`) VALUES
+('11', '11', '11', '11', '11', 79),
+('33', '33', '33', '33', '33', 80);
 
 --
 -- Índices para tabelas despejadas
@@ -96,7 +127,7 @@ ALTER TABLE `clinic`
 -- Índices para tabela `medico`
 --
 ALTER TABLE `medico`
-  ADD PRIMARY KEY (`cod_medico`);
+  ADD PRIMARY KEY (`codmedico`);
 
 --
 -- Índices para tabela `prontuario`
@@ -112,19 +143,19 @@ ALTER TABLE `prontuario`
 -- AUTO_INCREMENT de tabela `clinic`
 --
 ALTER TABLE `clinic`
-  MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cod_clinic` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de tabela `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `cod_medico` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codmedico` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
