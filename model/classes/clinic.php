@@ -39,7 +39,7 @@ class Clinic{
         }
     }
 
-    final public function alterar(){
+    final public function alterarClinic(){
         $ClinicDao = new ClinicDao();
         if ($ClinicDao->alterarClinic($this)) {
             return true;
