@@ -18,6 +18,15 @@ class Prontuario{
         $this -> setCirurgia($cirurgia);
         $this -> setReceita($receita);;
     }
+
+    public function alterarProntuario(){
+        $ProntuarioDao = new ProntuarioDao;
+        if($ProntuarioDao -> alterarProntuario($this)){
+            return true;
+        }else{
+            return false;
+        }
+    }
     /**
      * Get the value of vacina
      */ 
