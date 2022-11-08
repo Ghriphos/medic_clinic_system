@@ -67,10 +67,8 @@ class MedicoDao
 
         $result = mysqli_query($this->c,$sql);
         if (mysqli_affected_rows($this->c) == 0) {
-            $_SESSION['msg'] = "\n" . "Falha no UPDATE! Mensagem de erro: '$msg'";
             return false;
         }else {
-            $_SESSION['msg'] = "\n" . "Update bem sucedido";
             return true;
         }
     }
