@@ -53,9 +53,10 @@ if (isset($acao)) {
         if (
             isset($nome) 
             && isset($phone) && isset($street)
-            && isset($cpf) && isset($datanasct) 
-            && isset($cttemerg) && isset($cargo) 
-            && isset($PHD) && isset($codMedico)
+            && isset($cpf) && isset($codMedico)
+            && isset($birthDate) && isset($cttemerg)
+            && isset($cargo) && isset($PHD) 
+            && isset($estadocivil)
         ) {
             $nome = htmlspecialchars_decode(strip_tags($nome));
             $phone = htmlspecialchars_decode(strip_tags($phone));
@@ -66,18 +67,19 @@ if (isset($acao)) {
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
             $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
+            $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
             
             if (
                 is_string($nome)&& is_numeric($phone)
-                && is_numeric($cpf) && is_string($datanasct)
-                && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
-                && is_string($street)
+                && is_string($street) && is_numeric($cpf) 
+                && is_string($birthDate) && is_numeric($cttemerg)
+                && is_string($cargo) && is_numeric($PHD) 
+                && is_numeric($codMedico) && is_string($estadocivil)
                 ) {
-                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
+                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico, $estadocivil);
                     if ($medico->alterarMedico()){
                         $_SESSION['msg'] = "\n" ."Médico alterado com sucesso !!";     
                     } else {
-
                        $_SESSION['msg'] =  "\n" ."Falha no Alterar! Mensagem de erro: '$msg'";
                     }
             } else {

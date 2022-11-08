@@ -42,23 +42,13 @@
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />
-            <br /><br />
             <input type="hidden" name="acao" value="IncluirMedico">
             <input type="submit" value="IncluirMedico" />
+            <br><br>
         </form>
 
         <form action="../controller/controlMedico.php" method="post">
             Alterar Medico
-            <br /><br />
-            Digite o Cargo: <input type="text" name="cargo" size="20" />
-            <br /><br />
-            Digite o PHD: <input type="text" name="PHD" size="20" />
-            <br /><br />
-            Digite o Código do Médico: <input type="text" name="codmedico" size="20" />
-            <br /><br />
-            Digite a cirurgia: <input type="text" name="cirurgia" size="20" />
-            <br /><br />
-            Digite a receita: <input type="text" name="receita" size="20" />
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -72,6 +62,13 @@
             <br /><br />
             Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" >
             <br /><br />
+            Digite o Cargo: <input type="text" name="cargo" size="20" >
+            <br /><br />
+            Digite o PHD: <input type="text" name="PHD" size="20" >
+            <br /><br />
+            Digite o Código do Médico: <input type="text" name="codMedico" size="20" >
+            <br /><br />
+            Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />
             <input type="hidden" name="acao" value="AlterarMedico">
             <input type="submit" value="AlterarMedico" />

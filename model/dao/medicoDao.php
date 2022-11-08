@@ -23,7 +23,7 @@ class MedicoDao
 
     public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, nome, street, cpf, birthDate, cttemerg, cod_medico, estadocivil, phone) 
+        $sql = "INSERT INTO medico (cargo, PHD, nome, street, cpf, birthdate, cttemerg, cod_medico, estadocivil, phone) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $medico->getCargo()."','".
         $medico->getPHD()."','".
@@ -47,6 +47,31 @@ class MedicoDao
             $msg = mysqli_error($this->c);
             $_SESSION['msg'] = "\n" . "Falha no INSERT! Mensagem de erro: '$msg'";
             return false;
+        }
+    }
+
+    public function alterarMedico($medico)
+    {
+        $sql=
+        "UPDATE medico SET ".
+        "nome = '".$medico->getNome()."',".
+        "phone = '".$medico->getPhone()."',".
+        "street = '".$medico->getStreet()."',".
+        "birthdate = '".$medico->getBirthDate()."',".
+        "cttemerg = '".$medico->getCttemerg()."',".
+        "cargo = '".$medico->getCargo()."',".
+        "PHD = '".$medico->getPHD()."',".
+        "cpf = '".$medico->getCpf()."',".
+        "estadocivil = '".$medico->getEstadocivil()."'".
+        " WHERE ". " cod_medico = '".$medico->getCodMedico()."';"; 
+
+        $result = mysqli_query($this->c,$sql);
+        if (mysqli_affected_rows($this->c) == 0) {
+            $_SESSION['msg'] = "\n" . "Falha no UPDATE! Mensagem de erro: '$msg'";
+            return false;
+        }else {
+            $_SESSION['msg'] = "\n" . "Update bem sucedido";
+            return true;
         }
     }
 }
