@@ -10,28 +10,30 @@ if (isset($acao)) {
         if (
             isset($nome) 
             && isset($phone) && isset($street)
-            && isset($idade) && isset($cpf)
+            && isset($cpf) && isset($codMedico)
             && isset($birthDate) && isset($cttemerg)
-            && isset($cargo) && isset($PHD)
+            && isset($cargo) && isset($PHD) 
+            && isset($estadocivil)
         ) {
             $nome = htmlspecialchars_decode(strip_tags($nome));
             $phone = htmlspecialchars_decode(strip_tags($phone));
             $street = htmlspecialchars_decode(strip_tags($street));
-            $idade = htmlspecialchars_decode(strip_tags($idade));
             $cpf = htmlspecialchars_decode(strip_tags($cpf));
             $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $cargo = htmlspecialchars_decode(strip_tags($cargo));
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
+            $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
+            $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
             
             if (
                 is_string($nome)&& is_numeric($phone)
-                && is_string($street) && is_numeric($idade)
-                && is_numeric($cpf) && is_string($birthDate)
-                && is_numeric($cttemerg) && is_numeric($cargo)
-                && is_numeric($PHD) && is_numeric($codMedico)
+                && is_string($street) && is_numeric($cpf) 
+                && is_string($birthDate) && is_numeric($cttemerg)
+                && is_string($cargo) && is_numeric($PHD) 
+                && is_numeric($codMedico) && is_string($estadocivil)
                 ) {
-                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
+                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico, $estadocivil);
                     if ($medico->incluirMedico()){
                         $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
                     } else {
@@ -49,29 +51,12 @@ if (isset($acao)) {
 if (isset($acao)) {
     if ($acao == "AlterarMedico") {
         if (
-            isset($nome) 
-            && isset($phone) && isset($street)
-            && isset($cpf) && isset($datanasct) 
-            && isset($cttemerg) && isset($cargo) 
-            && isset($PHD) && isset($codMedico)
+            isset($codMedico) 
         ) {
-            $nome = htmlspecialchars_decode(strip_tags($nome));
-            $phone = htmlspecialchars_decode(strip_tags($phone));
-            $street = htmlspecialchars_decode(strip_tags($street));
-            $cpf = htmlspecialchars_decode(strip_tags($cpf));
-            $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
-            $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
-            $cargo = htmlspecialchars_decode(strip_tags($cargo));
-            $PHD = htmlspecialchars_decode(strip_tags($PHD));
             $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             
-            if (
-                is_string($nome)&& is_numeric($phone)
-                && is_numeric($cpf) && is_string($datanasct)
-                && is_numeric($cttemerg) && is_numeric($cargo) && is_numeric($PHD)
-                && is_string($street)
-                ) {
-                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico);
+            if (is_numeric($codMedico)) {
+                    $medico= new Medico($codMedico);
                     if ($medico->alterarMedico()){
                         $_SESSION['msg'] = "\n" ."Médico alterado com sucesso !!";     
                     } else {

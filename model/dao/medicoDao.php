@@ -1,8 +1,7 @@
 <?php
-
 #Todos os acessos ao site estarão aqui, fazendo com que qualquer banco possa ser usado
 #Ela foi criada para fazer conexão com o banco de dados
-include_once ('../classes/Medico.php');
+include_once ('../model/classes/Medico.php');
 
 class MedicoDao
 {
@@ -24,7 +23,7 @@ class MedicoDao
 
     public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, nome, phone, street, cpf, birthDate, cttemerg) 
+        $sql = "INSERT INTO medico (cargo, PHD, nome, street, cpf, birthDate, cttemerg, cod_medico, estadocivil, phone) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $medico->getCargo()."','".
         $medico->getPHD()."','".
@@ -33,6 +32,8 @@ class MedicoDao
         $medico->getCpf()."','".
         $medico->getBirthDate()."','".
         $medico->getCttemerg()."','".
+        $medico->getCodMedico()."','".
+        $medico->getEstadocivil()."','".
         $medico->getPhone()."');";
 
         $result = mysqli_query($this->c, $sql);

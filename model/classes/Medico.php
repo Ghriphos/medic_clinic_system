@@ -1,15 +1,15 @@
 <?php
 
-include_once ('../classes/person.php');
-include_once ('../dao/medicoDao.php');
+include_once ('Person.php');
+include_once ('../model/dao/medicoDao.php');
 
 final class Medico extends Person{
         protected $cargo;
         protected $PHD;
         protected $codMedico;
         
-        function __construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $cargo, $PHD, $codMedico){
-                parent::__construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg);
+        function __construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $cargo, $PHD, $codMedico, $estadocivil){
+                parent::__construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $estadocivil);
                 $this -> setCargo($cargo);
                 $this -> setPHD($PHD);     
                 $this -> setCodMedico($codMedico);     
@@ -19,7 +19,18 @@ final class Medico extends Person{
                 $medicoDao = new MedicoDao();
                 if($medicoDao->alterarMedico($this)){
                         return true;
-                }else{
+                }
+                else{
+                        return false;
+                }
+        }
+
+        public function incluirMedico(){
+                $medicoDao = new MedicoDao();
+                if ($medicoDao->incluirMedico($this)) {
+                        return true;
+                }
+                else{
                         return false;
                 }
         }
@@ -84,13 +95,5 @@ final class Medico extends Person{
                 return $this;
         }
 
-        public function incluirMedico(){
-        $medicoDao = new MedicoDao();
-        if ($medicoDao->incluirMedico($this)) {
-                return true;
-        }
-        else{
-                return false;
-        }
-        }
+        
     }

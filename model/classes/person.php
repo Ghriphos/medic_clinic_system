@@ -17,7 +17,7 @@ abstract class Person{
         $this -> setCpf($cpf);
         $this -> setBirthDate($birthDate);
         $this -> setCttemerg($cttemerg);
-        $this -> setEstadocivil($estadocivil);;
+        $this -> setEstadocivil($estadocivil);
     }
     public function alterar(){
 

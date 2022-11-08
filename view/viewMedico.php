@@ -40,7 +40,7 @@
             <br /><br />
             Digite o Código do Médico: <input type="text" name="codMedico" size="20" >
             <br /><br />
-            Digite o estado civil: <input type="text" name="codMedico" size="20" >
+            Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />
             <br /><br />
             <input type="hidden" name="acao" value="IncluirMedico">
@@ -51,7 +51,7 @@
             Alterar Medico
             <br /><br />
             Digite o Código: <input type="text" name="codMedico" size="20" />
-            
+            <br><br>
             <input type="hidden" name="acao" value="AlterarMedico">
             <input type="submit" value="AlterarMedico" />
         </form>
