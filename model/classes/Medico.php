@@ -21,8 +21,6 @@ final class Medico extends Person{
                         return true;
                 }
                 else{
-                }
-                else{
                         return false;
                 }
         }
