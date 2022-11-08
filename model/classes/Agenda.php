@@ -1,59 +1,76 @@
 <?php
 
-include_once ('../model/dao/ClinicDao.php');
+include_once ('../model/dao/agendaDao.php');
 //get = pessoa pode ver     set = pessoa pode alterar
 //baixando php get e setters e php debbug
 class Agenda{
-    private $data_e_hora;
-    private $status;
+    private $dataehora;
+    private $stats;
     private $descricao;
     private $codConsulta;
 
     //construtor
-    public function __construct($data_e_hora, $status, $descricao, $codConsulta) {
-        $this -> setData_e_hora($data_e_hora); //vc ta pegando o dado pelo get, para alterar pelo set
-        $this -> setStatus($status);
+    public function __construct($dataehora, $stats, $descricao, $codConsulta) {
+        $this -> setDataehora($dataehora); //vc ta pegando o dado pelo get, para alterar pelo set
+        $this -> setStats($stats);
         $this -> setDescricao($descricao);
         $this -> setCodConsulta($codConsulta);
     }
 
+    public function incluirAgenda(){
+        $AgendaDao = new AgendaDao;
+        if($AgendaDao -> incluirAgenda($this)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
-    /**
-     * Get the value of data_e_hora
-     */ 
-    public function getData_e_hora()
-    {
-        return $this->data_e_hora;
+    public function alterarAgenda(){
+        $AgendaDao = new AgendaDao;
+        if($AgendaDao -> alterarAgenda($this)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
-     * Set the value of data_e_hora
+     * Get the value of dataehora
+     */ 
+    public function getDataehora()
+    {
+        return $this->dataehora;
+    }
+
+    /**
+     * Set the value of dataehora
      *
      * @return  self
      */ 
-    public function setData_e_hora($data_e_hora)
+    public function setDataehora($dataehora)
     {
-        $this->data_e_hora = $data_e_hora;
+        $this->dataehora = $dataehora;
 
         return $this;
     }
 
     /**
-     * Get the value of status
+     * Get the value of stats
      */ 
-    public function getStatus()
+    public function getStats()
     {
-        return $this->status;
+        return $this->stats;
     }
 
     /**
-     * Set the value of status
+     * Set the value of stats
      *
      * @return  self
      */ 
-    public function setStatus($status)
+    public function setStats($stats)
     {
-        $this->status = $status;
+        $this->stats = $stats;
 
         return $this;
     }

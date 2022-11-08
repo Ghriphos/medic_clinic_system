@@ -29,8 +29,8 @@ class ProntuarioDao
         $prontuario->getVacina()."','".
         $prontuario->getExamepedido()."','".
         $prontuario->getExamevisto()."','".
-        $prontuario->getcirurgia()."','".
-        $prontuario->getreceita()."');";
+        $prontuario->getCirurgia()."','".
+        $prontuario->getReceita()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)
@@ -43,6 +43,23 @@ class ProntuarioDao
             $msg = mysqli_error($this->c);
             $_SESSION['msg'] = "\n" . "Falha no INSERT! Mensagem de erro: '$msg'";
             return false;
+        }
+    }
+
+    public function alterarProntuario($prontuario){
+        $sql=
+        "UPDATE prontuario SET ".
+        "examepedido = '".$prontuario->getExamepedido()."',".
+        "examevisto = '".$prontuario->getExamevisto()."',".
+        "cirurgia = '".$prontuario->getCirurgia()."',".
+        "receita = '".$prontuario->getReceita()."'".
+        " WHERE ". " vacina = '".$prontuario->getVacina()."';"; 
+
+        $result = mysqli_query($this->c,$sql);
+        if (mysqli_affected_rows($this->c) == 0) {
+            return false;
+        }else {
+            return true;
         }
     }
 }
