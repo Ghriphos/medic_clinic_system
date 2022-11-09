@@ -1,9 +1,9 @@
 <?php
 #Todos os acessos ao site estarão aqui, fazendo com que qualquer banco possa ser usado
 #Ela foi criada para fazer conexão com o banco de dados
-include_once ('../model/classes/Medico.php');
+include_once ('../model/classes/Recepcionista.php');
 
-class MedicoDao
+class RecepcionistaDao
 {
     private $c; #É o atributo que tem a conexão (Abre ele) com o banco de dados que eu estiver trabalhando, no nosso caso Mysql
     public function __construct()
@@ -21,20 +21,19 @@ class MedicoDao
         }
     }
 
-    public function incluirMedico($medico)
+    public function incluirRecepcionista($recepcionista)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, nome, street, cpf, birthdate, cttemerg, cod_medico, estadocivil, phone) 
+        $sql = "INSERT INTO recepcionista (codRecepcionista, horario, nome, street, cpf, birthdate, cttemerg, estadocivil, phone) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
-        $medico->getCargo()."','".
-        $medico->getPHD()."','".
-        $medico->getNome()."','".
-        $medico->getStreet()."','".
-        $medico->getCpf()."','".
-        $medico->getBirthDate()."','".
-        $medico->getCttemerg()."','".
-        $medico->getCodMedico()."','".
-        $medico->getEstadocivil()."','".
-        $medico->getPhone()."');";
+        $recepcionista->getCodRecepcionista()."','".
+        $recepcionista->getHorario()."','".
+        $recepcionista->getNome()."','".
+        $recepcionista->getStreet()."','".
+        $recepcionista->getCpf()."','".
+        $recepcionista->getBirthDate()."','".
+        $recepcionista->getCttemerg()."','".
+        $recepcionista->getEstadocivil()."','".
+        $recepcionista->getPhone()."');";
 
         $result = mysqli_query($this->c, $sql);
         if ($result == true)
@@ -50,20 +49,19 @@ class MedicoDao
         }
     }
 
-    public function alterarMedico($medico)
+    public function alterarrecepcionista($recepcionista)
     {
         $sql=
-        "UPDATE medico SET ".
-        "nome = '".$medico->getNome()."',".
-        "phone = '".$medico->getPhone()."',".
-        "street = '".$medico->getStreet()."',".
-        "birthdate = '".$medico->getBirthDate()."',".
-        "cttemerg = '".$medico->getCttemerg()."',".
-        "cargo = '".$medico->getCargo()."',".
-        "PHD = '".$medico->getPHD()."',".
-        "cpf = '".$medico->getCpf()."',".
-        "estadocivil = '".$medico->getEstadocivil()."'".
-        " WHERE ". " cod_medico = '".$medico->getCodMedico()."';"; 
+        "UPDATE recepcionista SET ".
+        "nome = '".$recepcionista->getNome()."',".
+        "phone = '".$recepcionista->getPhone()."',".
+        "street = '".$recepcionista->getStreet()."',".
+        "birthdate = '".$recepcionista->getBirthDate()."',".
+        "cttemerg = '".$recepcionista->getCttemerg()."',".
+        "horario = '".$recepcionista->getHorario()."',".
+        "cpf = '".$recepcionista->getCpf()."',".
+        "estadocivil = '".$recepcionista->getEstadocivil()."'".
+        " WHERE ". " codRecepcionista = '".$recepcionista->getCodRecepcionista()."';"; 
 
         $result = mysqli_query($this->c,$sql);
         if (mysqli_affected_rows($this->c) == 0) {
