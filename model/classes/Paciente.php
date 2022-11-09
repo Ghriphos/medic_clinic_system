@@ -10,8 +10,8 @@ final class Paciente extends Person{
         protected $convenio;
         protected $codPaciente;
         
-        function __construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $tiposanguineo, $alergia, $deficiencia, $convenio, $codPaciente, $estadocivil){
-                parent::__construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $estadocivil);
+        function __construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $tiposanguineo, $alergia, $deficiencia, $convenio, $codPaciente, $estadocivil){
+                parent::__construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil);
                 $this -> setTiposanguineo($tiposanguineo);
                 $this -> setAlergia($alergia);     
                 $this -> setDeficiencia($deficiencia); 
