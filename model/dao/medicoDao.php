@@ -23,7 +23,7 @@ class MedicoDao
 
     public function incluirMedico($medico)
     {
-        $sql = "INSERT INTO medico (cargo, PHD, nome, street, cpf, birthdate, cttemerg, cod_medico, estadocivil, phone) 
+        $sql = "INSERT INTO medico (cargo, PHD, nome, street, cpf, birthDate, cttemerg, cod_medico, estadocivil, phone) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $medico->getCargo()."','".
         $medico->getPHD()."','".
@@ -57,7 +57,7 @@ class MedicoDao
         "nome = '".$medico->getNome()."',".
         "phone = '".$medico->getPhone()."',".
         "street = '".$medico->getStreet()."',".
-        "birthdate = '".$medico->getBirthDate()."',".
+        "birthDate = '".$medico->getBirthDate()."',".
         "cttemerg = '".$medico->getCttemerg()."',".
         "cargo = '".$medico->getCargo()."',".
         "PHD = '".$medico->getPHD()."',".
