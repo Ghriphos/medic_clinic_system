@@ -7,8 +7,8 @@ final class Recepcionista extends Person{
     protected $codRecepcionista;
     protected $horario;
         
-        function __construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $estadocivil, $codRecepcionista, $horario){
-                parent::__construct($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $estadocivil);
+        function __construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horario){
+                parent::__construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil);
                 $this -> setCodRecepcionista($codRecepcionista);
                 $this -> setHorario($horario);     
         }
