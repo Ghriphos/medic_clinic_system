@@ -36,7 +36,7 @@ if (isset($acao)) {
                         $_SESSION['msg'] = "\n" ."Recepcionista Incluida com sucesso !!";     
                     } else {
 
-                    //    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
+                       $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
                     }
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
@@ -72,7 +72,7 @@ if (isset($acao)) {
                 && is_string($birthDate) && is_numeric($cttemerg)
                 && is_string($codRecepcionista) && is_numeric($horario) && is_string($estadocivil)
                 ) {
-                    $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $codRecepcionista, $horario, $estadocivil);
+                    $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horario);
                     if ($recepcionista->alterarRecepcionista()){
                         $_SESSION['msg'] = "\n" ."Recepcionista alterada com sucesso !!";     
                     } else {

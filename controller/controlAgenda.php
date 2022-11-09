@@ -26,7 +26,7 @@ if (isset($acao)) {
                         $_SESSION['msg'] = "\n" ."Agenda Incluída com sucesso !!";     
                     } else {
 
-                    //    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
+                        $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
                     }
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
