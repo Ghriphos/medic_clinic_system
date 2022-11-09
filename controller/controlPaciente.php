@@ -52,7 +52,7 @@ if (isset($acao)) {
 }
 
 if (isset($acao)) {
-    if ($acao == "AlterarMedico") {
+    if ($acao == "AlterarPaciente") {
         if (
             isset($nome) 
             && isset($phone) && isset($street)
@@ -79,9 +79,9 @@ if (isset($acao)) {
                 && is_string($tiposanguineo) && is_numeric($alergia) 
                 && is_numeric($codPaciente) && is_string($estadocivil)
                 ) {
-                    $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $tiposanguineo, $alergia, $codPaciente, $estadocivil);
-                    if ($medico->alterarMedico()){
-                        $_SESSION['msg'] = "\n" ."Médico alterado com sucesso !!";     
+                    $paciente= new Paciente($nome, $phone, $street, $cpf, $birthdate, $cttemerg, $tiposanguineo, $alergia, $deficiencia, $convenio, $codPaciente, $estadocivil);
+                    if ($medico->alterarPaciente()){
+                        $_SESSION['msg'] = "\n" ."Paciente alterado com sucesso !!";     
                     } else {
                        $_SESSION['msg'] =  "\n" ."Falha no Alterar! Mensagem de erro: '$msg'";
                     }
