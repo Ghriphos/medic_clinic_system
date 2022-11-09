@@ -35,7 +35,6 @@ class PacienteDao
         $paciente->getCpf()."','".
         $paciente->getBirthDate()."','".
         $paciente->getCttemerg()."','".
-        $paciente->getCodpaciente()."','".
         $paciente->getEstadocivil()."','".
         $paciente->getPhone()."');";
 
