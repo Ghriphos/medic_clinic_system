@@ -5,12 +5,14 @@ include_once ('../model/dao/recepcionistaDao.php');
 
 final class Recepcionista extends Person{
     protected $codRecepcionista;
-    protected $horario;
+    protected $horarioInicio;
+    protected $horarioFim;
         
-        function __construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horario){
+        function __construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horarioInicio, $horarioFim){
                 parent::__construct($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil);
                 $this -> setCodRecepcionista($codRecepcionista);
-                $this -> setHorario($horario);     
+                $this -> setHorarioInicio($horarioInicio);
+                $this -> setHorarioFim($horarioFim);
         }
 
         final public function alterarRecepcionista(){
@@ -53,22 +55,44 @@ final class Recepcionista extends Person{
         return $this;
     }
 
+    
+
     /**
-     * Get the value of horario
+     * Get the value of horarioInicio
      */ 
-    public function getHorario()
+    public function getHorarioInicio()
     {
-        return $this->horario;
+        return $this->horarioInicio;
     }
 
     /**
-     * Set the value of horario
+     * Set the value of horarioInicio
      *
      * @return  self
      */ 
-    public function setHorario($horario)
+    public function setHorarioInicio($horarioInicio)
     {
-        $this->horario = $horario;
+        $this->horarioInicio = $horarioInicio;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of horarioFim
+     */ 
+    public function getHorarioFim()
+    {
+        return $this->horarioFim;
+    }
+
+    /**
+     * Set the value of horarioFim
+     *
+     * @return  self
+     */ 
+    public function setHorarioFim($horarioFim)
+    {
+        $this->horarioFim = $horarioFim;
 
         return $this;
     }

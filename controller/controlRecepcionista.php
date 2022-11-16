@@ -24,6 +24,8 @@ if (isset($acao)) {
             $codRecepcionista = htmlspecialchars_decode(strip_tags($codRecepcionista));
             $horario = htmlspecialchars_decode(strip_tags($horario));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
+
+            $birthDate = formatardataBancoEnvio($birthDate);
             
             if (
                 is_string($nome)&& is_numeric($phone)
@@ -49,12 +51,11 @@ if (isset($acao)) {
 if (isset($acao)) {
     if ($acao == "AlterarRecepcionista") {
         if (
-            isset($nome) 
-            && isset($phone) && isset($street)
-            && isset($cpf)
+            isset($nome) && isset($phone) 
+            && isset($street) && isset($cpf)
             && isset($birthDate) && isset($cttemerg)
-            && isset($codRecepcionista) && isset($horario) 
-            && isset($estadocivil)
+            && isset($codRecepcionista) && isset($horarioInicio) 
+            && isset($horarioFim) && isset($estadocivil)
         ) {
             $nome = htmlspecialchars_decode(strip_tags($nome));
             $phone = htmlspecialchars_decode(strip_tags($phone));
@@ -63,16 +64,20 @@ if (isset($acao)) {
             $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $codRecepcionista = htmlspecialchars_decode(strip_tags($codRecepcionista));
-            $horario = htmlspecialchars_decode(strip_tags($horario));
+            $horarioInicio = htmlspecialchars_decode(strip_tags($horarioInicio));
+            $horarioFim = htmlspecialchars_decode(strip_tags($horarioFim));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
+
+            $birthDate = formatardataBancoEnvio($birthDate);
             
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
                 && is_string($birthDate) && is_numeric($cttemerg)
-                && is_string($codRecepcionista) && is_numeric($horario) && is_string($estadocivil)
+                && is_string($codRecepcionista) && is_string($horarioInicio) 
+                && is_string($horarioFim) && is_string($estadocivil)
                 ) {
-                    $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horario);
+                    $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horarioInicio, $horarioFim);
                     if ($recepcionista->alterarRecepcionista()){
                         $_SESSION['msg'] = "\n" ."Recepcionista alterada com sucesso !!";     
                     } else {

@@ -27,6 +27,8 @@ if (isset($acao)) {
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
             $deficiencia = htmlspecialchars_decode(strip_tags($deficiencia));
             $convenio = htmlspecialchars_decode(strip_tags($convenio));
+
+            $birthDate = formatardataBancoEnvio($birthDate);
             
             if (
                 is_string($nome)&& is_numeric($phone)
@@ -71,6 +73,8 @@ if (isset($acao)) {
             $alergia = htmlspecialchars_decode(strip_tags($alergia));
             $codPaciente = htmlspecialchars_decode(strip_tags($codPaciente));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
+
+            $birthDate = formatardataBancoEnvio($birthDate);
             
             if (
                 is_string($nome)&& is_numeric($phone)

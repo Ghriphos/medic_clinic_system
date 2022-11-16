@@ -1,5 +1,6 @@
 <?php
 include_once ('../model/classes/Medico.php');
+include_once('dateFunctions.php');
 
 session_start();
 
@@ -25,6 +26,8 @@ if (isset($acao)) {
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
             $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
+
+            $birthDate = formatardataBancoEnvio($birthDate);
             
             if (
                 is_string($nome)&& is_numeric($phone)
@@ -68,6 +71,8 @@ if (isset($acao)) {
             $PHD = htmlspecialchars_decode(strip_tags($PHD));
             $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
+
+            $birthDate = formatardataBancoEnvio($birthDate);
             
             if (
                 is_string($nome)&& is_numeric($phone)
