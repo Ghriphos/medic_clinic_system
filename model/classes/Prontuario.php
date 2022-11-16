@@ -3,22 +3,21 @@
 include_once ('../model/dao/prontuarioDao.php');
 
 
-class Prontuario{
+class Prontuario extends Pessoa{
     private $codConsulta;
-    private $nomePaciente;
-    private $nomeMedico;
-    private $data;
-    private $tipo;
+    private $dataHoraConsulta;
+    private $tipoConsulta;
     private $encaminhamento;
     private $descricao;
 
     //construtor
-    public function __construct($vacina, $examepedido, $examevisto, $cirurgia, $receita) {
-        $this -> setVacina($vacina);
-        $this -> setExamepedido($examepedido);
-        $this -> setExamevisto($examevisto);
-        $this -> setCirurgia($cirurgia);
-        $this -> setReceita($receita);;
+    public function __construct($codConsulta, $nomePaciente, $nomeMedico, $dataConsulta, $tipoConsulta, $encaminhamento, $descricao) {
+        parent::__construct($nomePaciente, $nomeMedico);
+        $this -> setCodConsulta();
+        $this -> setDataConsulta();
+        $this -> setTipoConsulta();
+        $this -> setEncaminhamento();
+        $this -> setDescricao();
     }
 
     public function alterarProntuario(){
@@ -61,86 +60,6 @@ class Prontuario{
     }
 
     /**
-     * Get the value of nomePaciente
-     */ 
-    public function getNomePaciente()
-    {
-        return $this->nomePaciente;
-    }
-
-    /**
-     * Set the value of nomePaciente
-     *
-     * @return  self
-     */ 
-    public function setNomePaciente($nomePaciente)
-    {
-        $this->nomePaciente = $nomePaciente;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of nomeMedico
-     */ 
-    public function getNomeMedico()
-    {
-        return $this->nomeMedico;
-    }
-
-    /**
-     * Set the value of nomeMedico
-     *
-     * @return  self
-     */ 
-    public function setNomeMedico($nomeMedico)
-    {
-        $this->nomeMedico = $nomeMedico;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of data
-     */ 
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    /**
-     * Set the value of data
-     *
-     * @return  self
-     */ 
-    public function setData($data)
-    {
-        $this->data = $data;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of tipo
-     */ 
-    public function getTipo()
-    {
-        return $this->tipo;
-    }
-
-    /**
-     * Set the value of tipo
-     *
-     * @return  self
-     */ 
-    public function setTipo($tipo)
-    {
-        $this->tipo = $tipo;
-
-        return $this;
-    }
-
-    /**
      * Get the value of encaminhamento
      */ 
     public function getEncaminhamento()
@@ -176,6 +95,46 @@ class Prontuario{
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tipoConsulta
+     */ 
+    public function getTipoConsulta()
+    {
+        return $this->tipoConsulta;
+    }
+
+    /**
+     * Set the value of tipoConsulta
+     *
+     * @return  self
+     */ 
+    public function setTipoConsulta($tipoConsulta)
+    {
+        $this->tipoConsulta = $tipoConsulta;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dataHoraConsulta
+     */ 
+    public function getDataHoraConsulta()
+    {
+        return $this->dataHoraConsulta;
+    }
+
+    /**
+     * Set the value of dataHoraConsulta
+     *
+     * @return  self
+     */ 
+    public function setDataHoraConsulta($dataHoraConsulta)
+    {
+        $this->dataHoraConsulta = $dataHoraConsulta;
 
         return $this;
     }
