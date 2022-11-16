@@ -10,16 +10,18 @@ class Prontuario{
     private $dataHoraConsulta;
     private $tipoConsulta;
     private $encaminhamento;
+    private $retornoEncaminhamento; // caso o paciente tenha trago um exame anteriormente requisitado pelo médico
     private $descricao;
 
     //construtor
-    public function __construct($codConsulta, $nomePaciente, $nomeMedico, $dataConsulta, $tipoConsulta, $encaminhamento, $descricao) {
+    public function __construct($codConsulta, $nomePaciente, $nomeMedico, $dataConsulta, $tipoConsulta, $encaminhamento, $retornoEncaminhamento, $descricao) {
         $this -> setCodConsulta();
         $this -> setNomePaciente();
         $this -> setNomeMedico();
         $this -> setDataConsulta();
         $this -> setTipoConsulta();
         $this -> setEncaminhamento();
+        $this -> setRetornoEncaminhamento();
         $this -> setDescricao();
     }
 
@@ -178,6 +180,26 @@ class Prontuario{
     public function setNomePaciente($nomePaciente)
     {
         $this->nomePaciente = $nomePaciente;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of retornoEncaminhamento
+     */ 
+    public function getRetornoEncaminhamento()
+    {
+        return $this->retornoEncaminhamento;
+    }
+
+    /**
+     * Set the value of retornoEncaminhamento
+     *
+     * @return  self
+     */ 
+    public function setRetornoEncaminhamento($retornoEncaminhamento)
+    {
+        $this->retornoEncaminhamento = $retornoEncaminhamento;
 
         return $this;
     }
