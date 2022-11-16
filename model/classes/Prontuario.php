@@ -3,8 +3,10 @@
 include_once ('../model/dao/prontuarioDao.php');
 
 
-class Prontuario extends Pessoa{
+class Prontuario{
     private $codConsulta;
+    private $nomeMedico;
+    private $nomePaciente;
     private $dataHoraConsulta;
     private $tipoConsulta;
     private $encaminhamento;
@@ -12,8 +14,9 @@ class Prontuario extends Pessoa{
 
     //construtor
     public function __construct($codConsulta, $nomePaciente, $nomeMedico, $dataConsulta, $tipoConsulta, $encaminhamento, $descricao) {
-        parent::__construct($nomePaciente, $nomeMedico);
         $this -> setCodConsulta();
+        $this -> setNomePaciente();
+        $this -> setNomeMedico();
         $this -> setDataConsulta();
         $this -> setTipoConsulta();
         $this -> setEncaminhamento();
@@ -135,6 +138,46 @@ class Prontuario extends Pessoa{
     public function setDataHoraConsulta($dataHoraConsulta)
     {
         $this->dataHoraConsulta = $dataHoraConsulta;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nomeMedico
+     */ 
+    public function getNomeMedico()
+    {
+        return $this->nomeMedico;
+    }
+
+    /**
+     * Set the value of nomeMedico
+     *
+     * @return  self
+     */ 
+    public function setNomeMedico($nomeMedico)
+    {
+        $this->nomeMedico = $nomeMedico;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nomePaciente
+     */ 
+    public function getNomePaciente()
+    {
+        return $this->nomePaciente;
+    }
+
+    /**
+     * Set the value of nomePaciente
+     *
+     * @return  self
+     */ 
+    public function setNomePaciente($nomePaciente)
+    {
+        $this->nomePaciente = $nomePaciente;
 
         return $this;
     }
