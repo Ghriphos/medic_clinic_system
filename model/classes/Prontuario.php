@@ -4,11 +4,13 @@ include_once ('../model/dao/prontuarioDao.php');
 
 
 class Prontuario{
-    private $vacina;
-    private $examepedido;
-    private $examevisto;
-    private $cirurgia;
-    private $receita;
+    private $codConsulta;
+    private $nomePaciente;
+    private $nomeMedico;
+    private $data;
+    private $tipo;
+    private $encaminhamento;
+    private $descricao;
 
     //construtor
     public function __construct($vacina, $examepedido, $examevisto, $cirurgia, $receita) {
@@ -27,105 +29,6 @@ class Prontuario{
             return false;
         }
     }
-    /**
-     * Get the value of vacina
-     */ 
-    public function getVacina()
-    {
-        return $this->vacina;
-    }
-
-    /**
-     * Set the value of vacina
-     *
-     * @return  self
-     */ 
-    public function setVacina($vacina)
-    {
-        $this->vacina = $vacina;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of examepedido
-     */ 
-    public function getExamepedido()
-    {
-        return $this->examepedido;
-    }
-
-    /**
-     * Set the value of examepedido
-     *
-     * @return  self
-     */ 
-    public function setExamepedido($examepedido)
-    {
-        $this->examepedido = $examepedido;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of examevisto
-     */ 
-    public function getExamevisto()
-    {
-        return $this->examevisto;
-    }
-
-    /**
-     * Set the value of examevisto
-     *
-     * @return  self
-     */ 
-    public function setExamevisto($examevisto)
-    {
-        $this->examevisto = $examevisto;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of cirurgia
-     */ 
-    public function getCirurgia()
-    {
-        return $this->cirurgia;
-    }
-
-    /**
-     * Set the value of cirurgia
-     *
-     * @return  self
-     */ 
-    public function setCirurgia($cirurgia)
-    {
-        $this->cirurgia = $cirurgia;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of receita
-     */ 
-    public function getReceita()
-    {
-        return $this->receita;
-    }
-
-    /**
-     * Set the value of receita
-     *
-     * @return  self
-     */ 
-    public function setReceita($receita)
-    {
-        $this->receita = $receita;
-
-        return $this;
-    }
 
     public function incluirProntuario(){
         $prontuarioDao = new ProntuarioDao();
@@ -135,6 +38,146 @@ class Prontuario{
         else{
             return false;
         }
+    }
+
+    /**
+     * Get the value of codConsulta
+     */ 
+    public function getCodConsulta()
+    {
+        return $this->codConsulta;
+    }
+
+    /**
+     * Set the value of codConsulta
+     *
+     * @return  self
+     */ 
+    public function setCodConsulta($codConsulta)
+    {
+        $this->codConsulta = $codConsulta;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nomePaciente
+     */ 
+    public function getNomePaciente()
+    {
+        return $this->nomePaciente;
+    }
+
+    /**
+     * Set the value of nomePaciente
+     *
+     * @return  self
+     */ 
+    public function setNomePaciente($nomePaciente)
+    {
+        $this->nomePaciente = $nomePaciente;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nomeMedico
+     */ 
+    public function getNomeMedico()
+    {
+        return $this->nomeMedico;
+    }
+
+    /**
+     * Set the value of nomeMedico
+     *
+     * @return  self
+     */ 
+    public function setNomeMedico($nomeMedico)
+    {
+        $this->nomeMedico = $nomeMedico;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of data
+     */ 
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Set the value of data
+     *
+     * @return  self
+     */ 
+    public function setData($data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tipo
+     */ 
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * Set the value of tipo
+     *
+     * @return  self
+     */ 
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of encaminhamento
+     */ 
+    public function getEncaminhamento()
+    {
+        return $this->encaminhamento;
+    }
+
+    /**
+     * Set the value of encaminhamento
+     *
+     * @return  self
+     */ 
+    public function setEncaminhamento($encaminhamento)
+    {
+        $this->encaminhamento = $encaminhamento;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of descricao
+     */ 
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * Set the value of descricao
+     *
+     * @return  self
+     */ 
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+
+        return $this;
     }
 }
 ?>
