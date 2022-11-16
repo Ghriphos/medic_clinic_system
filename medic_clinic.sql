@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Nov-2022 às 13:24
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 16-Nov-2022 às 20:03
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -136,13 +136,13 @@ INSERT INTO `paciente` (`nome`, `phone`, `street`, `cpf`, `birthDate`, `cttemerg
 --
 
 CREATE TABLE `prontuario` (
-  `vacina` varchar(20) DEFAULT NULL,
-  `examepedido` varchar(40) DEFAULT NULL,
-  `examevisto` varchar(40) DEFAULT NULL,
-  `cirurgia` varchar(40) DEFAULT NULL,
-  `receita` varchar(100) DEFAULT NULL,
-  `codProntuario` int(11) NOT NULL,
-  `cod_person` int(11) DEFAULT NULL
+  `nomePaciente` varchar(128) DEFAULT NULL,
+  `nomeMedico` varchar(128) DEFAULT NULL,
+  `dataHoraConsulta` datetime DEFAULT NULL,
+  `tipoConsulta` varchar(128) DEFAULT NULL,
+  `encaminhamento` text DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
+  `codConsulta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -203,7 +203,7 @@ ALTER TABLE `paciente`
 -- Índices para tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  ADD PRIMARY KEY (`codProntuario`);
+  ADD PRIMARY KEY (`codConsulta`);
 
 --
 -- Índices para tabela `recepcionista`
@@ -225,7 +225,7 @@ ALTER TABLE `clinic`
 -- AUTO_INCREMENT de tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  MODIFY `codProntuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `codConsulta` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
