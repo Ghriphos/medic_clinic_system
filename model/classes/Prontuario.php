@@ -5,8 +5,8 @@ include_once ('../model/dao/prontuarioDao.php');
 
 class Prontuario{
     private $codConsulta;
-    private $nomeMedico;
-    private $nomePaciente;
+    private $codMedico;
+    private $codPaciente;
     private $dataHoraConsulta;
     private $tipoConsulta;
     private $encaminhamento;
@@ -14,10 +14,10 @@ class Prontuario{
     private $descricao;
 
     //construtor
-    public function __construct($codConsulta, $nomePaciente, $nomeMedico, $dataConsulta, $tipoConsulta, $encaminhamento, $retornoEncaminhamento, $descricao) {
+    public function __construct($codConsulta, $codPaciente, $codMedico, $dataConsulta, $tipoConsulta, $encaminhamento, $retornoEncaminhamento, $descricao) {
         $this -> setCodConsulta();
-        $this -> setNomePaciente();
-        $this -> setNomeMedico();
+        $this -> setCodPaciente();
+        $this -> setCodMedico();
         $this -> setDataConsulta();
         $this -> setTipoConsulta();
         $this -> setEncaminhamento();
@@ -145,46 +145,6 @@ class Prontuario{
     }
 
     /**
-     * Get the value of nomeMedico
-     */ 
-    public function getNomeMedico()
-    {
-        return $this->nomeMedico;
-    }
-
-    /**
-     * Set the value of nomeMedico
-     *
-     * @return  self
-     */ 
-    public function setNomeMedico($nomeMedico)
-    {
-        $this->nomeMedico = $nomeMedico;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of nomePaciente
-     */ 
-    public function getNomePaciente()
-    {
-        return $this->nomePaciente;
-    }
-
-    /**
-     * Set the value of nomePaciente
-     *
-     * @return  self
-     */ 
-    public function setNomePaciente($nomePaciente)
-    {
-        $this->nomePaciente = $nomePaciente;
-
-        return $this;
-    }
-
-    /**
      * Get the value of retornoEncaminhamento
      */ 
     public function getRetornoEncaminhamento()
@@ -200,6 +160,46 @@ class Prontuario{
     public function setRetornoEncaminhamento($retornoEncaminhamento)
     {
         $this->retornoEncaminhamento = $retornoEncaminhamento;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of codMedico
+     */ 
+    public function getCodMedico()
+    {
+        return $this->codMedico;
+    }
+
+    /**
+     * Set the value of codMedico
+     *
+     * @return  self
+     */ 
+    public function setCodMedico($codMedico)
+    {
+        $this->codMedico = $codMedico;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of codPaciente
+     */ 
+    public function getCodPaciente()
+    {
+        return $this->codPaciente;
+    }
+
+    /**
+     * Set the value of codPaciente
+     *
+     * @return  self
+     */ 
+    public function setCodPaciente($codPaciente)
+    {
+        $this->codPaciente = $codPaciente;
 
         return $this;
     }
