@@ -1,0 +1,18 @@
+
+
+
+
+form{
+    padding-top: 20px;
+    padding-left: 400px;
+}
+.nav-link{
+    color: white;
+}
+li:hover, .active {
+    background-color:white;
+}
+.footerlrv{
+    background-color: black;
+    color: white;
+}
