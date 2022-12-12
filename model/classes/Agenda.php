@@ -56,7 +56,8 @@ class Agenda{
         $qtdLinhas = mysqli_num_rows($testaConsulta);
         if ($qtdLinhas == 0){
             $_SESSION['msg'] = "\n" . "Não existem registros na tabela agenda";
-        }else{
+        }
+        else{
             $listaAgenda = array();
             for ($i = 0; $i < $qtdLinhas; $i++){
                 $linha = mysqli_fetch_assoc($testaConsulta);
@@ -67,6 +68,8 @@ class Agenda{
             }
             return $listaAgenda;
         }
+        $emptyArray = array();
+        return $emptyArray;
     }
 
     public function toArray(){

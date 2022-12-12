@@ -70,6 +70,12 @@ class ProntuarioDao
         $result = mysqli_query($this->c,$sql);
         return $result;
     }
+
+    function consultarListaProntuario(){
+        $sql = "SELECT codProntuario, vacina, examepedido, examevisto, cirurgia, receita" . " from prontuario";
+        $result = mysqli_query($this->c, $sql);
+        return $result;
+    }
 }
 
 #Se eu quero usar um atributo de uma classe, devo usar "This"

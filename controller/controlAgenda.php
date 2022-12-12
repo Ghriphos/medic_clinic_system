@@ -97,7 +97,7 @@ if (isset($acao)){
         $agenda = new Agenda("","","",""); #os "" são a quantidade de campos da tabela
         $lista=array();
         $lista=$agenda->consultarLista();
-        $qtdLinhas=count ($lista);
+        $qtdLinhas= count($lista);
         echo "<hr>". $qtdLinhas;
         $listaArray = array();
         for($i=0; $i<$qtdLinhas; $i++){

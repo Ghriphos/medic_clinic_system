@@ -126,4 +126,30 @@ if(isset($acao)){
     }
 }
 
+if (isset($acao)){
+    if ($acao == "consultarFullProntuario"){
+        $prontuario = new Prontuario("","","","", "", ""); #os "" são a quantidade de campos da tabela
+        $lista=array();
+        $lista=$prontuario->consultarLista();
+        $qtdLinhas= count($lista);
+        echo "<hr>". $qtdLinhas;
+        $listaArray = array();
+        for($i=0; $i<$qtdLinhas; $i++){
+            $listaArray[$i] = $lista[$i]->toArray();
+        }
+        $_SESSION['lista'] = $listaArray;
+
+        $path = $_SERVER['HTTP_REFERER'];
+        header("Location: $path");
+    }
+}
+
+if(isset($acao)){
+    if($acao == 'Limpar'){
+        session_destroy();
+        $path = $_SERVER['HTTP_REFERER'];
+        header("Location: $path");
+    }
+}
+
 ?>

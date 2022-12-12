@@ -46,6 +46,42 @@ class Prontuario{
             $this->setReceita($linha['receita']);
         }
     }
+
+    final public function consultarLista(){
+        $agendaDao = new ProntuarioDao();
+        $testaConsulta = $agendaDao->consultarListaProntuario();
+        $qtdLinhas = mysqli_num_rows($testaConsulta);
+        if ($qtdLinhas == 0){
+            $_SESSION['msg'] = "\n" . "Não existem registros na tabela prontuário";
+        }
+        else{
+            $listaProntuario = array();
+            for ($i = 0; $i < $qtdLinhas; $i++){
+                $linha = mysqli_fetch_assoc($testaConsulta);
+                $tempProntuario = null;
+                $tempProntuario = new Prontuario($linha['codProntuario'], $linha['vacina'],
+                $linha['examepedido'], $linha['examevisto'], $linha['cirurgia'], $linha['receita']);
+                $listaProntuario[$i]=$tempProntuario;
+            }
+            return $listaProntuario;
+        }
+        $emptyArray = array();
+        return $emptyArray;
+    }
+
+    public function toArray(){
+        return(
+            array(
+            "codProntuario" => $this->getCodProntuario(),
+            "vacina" => $this->getVacina(),
+            "examepedido" => $this->getExamepedido(),
+            "examevisto" => $this->getExamevisto(),
+            "cirurgia" => $this->getCirurgia(),
+            "receita" => $this->getReceita(),
+            )
+        );
+    }
+
     /**
      * Get the value of vacina
      */ 
