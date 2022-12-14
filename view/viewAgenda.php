@@ -129,6 +129,18 @@ error_reporting(E_ERROR | E_PARSE);
         </tr>
 
         <?php
+        if (isset($_SESSION)){
+            foreach ($_SESSION as $linha => $value){
+                echo '<tr>';
+                foreach ($_SESSION[$linha] as $campo){
+                    echo '<td>' . $campo . '</td>';
+                }
+                echo '<tr>';
+            }
+        }
+        ?>
+
+        <?php
         include_once('../model/classes/Agenda.php');
 
         if (!empty($_SESSION['lista'])) {

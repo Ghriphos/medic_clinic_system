@@ -133,6 +133,18 @@
             </tr>
 
             <?php
+            if (isset($_SESSION)){
+                foreach ($_SESSION as $linha => $value){
+                    echo '<tr>';
+                    foreach ($_SESSION[$linha] as $campo){
+                        echo '<td>' . $campo . '</td>';
+                    }
+                    echo '<tr>';
+                }
+            }
+            ?>
+
+            <?php
             include_once('../model/classes/Prontuario.php');
 
             if (!empty($_SESSION['lista'])) {
