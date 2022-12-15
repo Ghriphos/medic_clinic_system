@@ -63,7 +63,7 @@
 
 
         <form action="../controller/controlRecepcionista.php" method="post">
-            Incluir Recepcionista
+            <b>Incluir Recepcionista</b>
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -77,7 +77,7 @@
             <br /><br />
             Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" >
             <br /><br />
-            Digite o Codigo da recepcionista: <input type="text" name="codRecepcionista" size="20" >
+            <b>Digite o Codigo da recepcionista:</b> <input type="text" name="codRecepcionista" size="20" >
             <br /><br />
             Digite o Horário inicial: <input type="text" name="horarioInicio" size="20" >
             <br /><br />
@@ -91,7 +91,7 @@
         </form>
 
         <form action="../controller/controlRecepcionista.php" method="post">
-            Alterar Recepcionista
+        <b>Alterar Recepcionista</b>
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -105,7 +105,7 @@
             <br /><br />
             Digite o Contato emergencial: <input type="text" name="cttemerg" size="20" >
             <br /><br />
-            Digite o Codigo da recepcionista: <input type="text" name="codRecepcionista" size="20" >
+            <b>Digite o Codigo da recepcionista:</b> <input type="text" name="codRecepcionista" size="20" >
             <br /><br />
             Digite o Horário inicial: <input type="text" name="horarioInicio" size="20" >
             <br /><br />

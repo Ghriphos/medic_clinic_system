@@ -56,7 +56,7 @@ error_reporting(E_ERROR | E_PARSE);
 
 <section>
     <form action="../controller/controlAgenda.php" method="post">
-        Incluir Agenda
+        <b>Incluir Agenda</b>
         <br/><br/>
         Digite a Data e hora: <input type="text" name="dataehora" size="20" />
         <br /><br />
@@ -64,7 +64,7 @@ error_reporting(E_ERROR | E_PARSE);
         <br /><br />
         Digite a Descricao: <input type="text" name="descricao" size="40" />
         <br /><br />
-        Digite o Codigo da consulta: <input type="text" name="codConsulta" size="20" />
+        <b>Digite o Codigo da consulta:</b> <input type="text" name="codConsulta" size="20" />
         <br /><br />
         <input type="hidden" name="acao" value="IncluirAgenda">
         <input type="submit" class="btn btn-dark" value="IncluirAgenda" />
@@ -72,7 +72,7 @@ error_reporting(E_ERROR | E_PARSE);
 
     <form action="../controller/controlAgenda.php" method="post">
         <br /><br />
-        Alterar Agenda
+        <b>Alterar Agenda</b>
         <br /><br />
         Digite a Data e hora: <input type="text" name="dataehora" size="20" />
         <br /><br />
@@ -80,7 +80,7 @@ error_reporting(E_ERROR | E_PARSE);
         <br /><br />
         Digite a Descricao: <input type="text" name="descricao" size="40" />
         <br /><br />
-        Digite o Codigo da consulta: <input type="text" name="codConsulta" size="20" />
+        <b>Digite o Codigo da consulta:</b> <input type="text" name="codConsulta" size="20" />
         <br /><br />
         <input type="hidden" name="acao" value="AlterarAgenda">
         <input type="submit" class="btn btn-dark" value="AlterarAgenda" />
@@ -93,9 +93,9 @@ error_reporting(E_ERROR | E_PARSE);
 
     <form action="../controller/controlAgenda.php" method="post">
         <br /><br />
-        Consultar Agenda
+        <b>Consultar Agenda</b>
         <br /><br />
-        Digite o Codigo da consulta: <input type="text" name="codConsulta" size="20" />
+        <b>Digite o Codigo da consulta:</b> <input type="text" name="codConsulta" size="20" />
         <br /><br />
         <input type="hidden" name="acao" value="ConsultarAgenda">
         <input type="submit" class="btn btn-dark" value="ConsultarAgenda" />
@@ -108,7 +108,7 @@ error_reporting(E_ERROR | E_PARSE);
 
     <form action="../controller/controlAgenda.php" method="post">
         <br /><br />
-        Consultar Full Agenda
+        <b>Consultar Full Agenda</b>
         <br /><br />
         <input type="hidden" name="acao" value="consultarFullagenda">
         <input type="submit" class="btn btn-dark" value="consultarFullagenda" />

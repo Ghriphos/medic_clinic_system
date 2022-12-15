@@ -55,9 +55,9 @@
 
 
                 <form action="../controller/controlProntuario.php" method="post">
-                    Incluir Prontuario
+                <b>Incluir Prontuario</b>
                     <br /><br />
-                    Digite o Código do Prontuario: <input type="text" name="codProntuario" size="20" />
+                    <b>Digite o Código do Prontuario:</b> <input type="text" name="codProntuario" size="20" />
                     <br /><br />
                     Digite a Vacina: <input type="text" name="vacina" size="20" />
                     <br /><br />
@@ -75,9 +75,9 @@
 
                 <form action="../controller/controlProntuario.php" method="post">
                 <br /><br />
-                    Alterar Prontuario
+                <b>Alterar Prontuario</b>
                     <br /><br />
-                    Digite o Código do Prontuario: <input type="text" name="codProntuario" size="20" />
+                    <b>Digite o Código do Prontuario:</b> <input type="text" name="codProntuario" size="20" />
                     <br /><br />
                     Digite a Vacina: <input type="text" name="vacina" size="20" />
                     <br /><br />
@@ -95,9 +95,9 @@
 
                 <form action="../controller/controlProntuario.php" method="post">
                     <br /><br />
-                    Consultar Prontuário
+                    <b>Consultar Prontuário</b>
                     <br /><br />
-                    Digite o Codigo do prontuario: <input type="text" name="codProntuario" size="20" />
+                    <b>Digite o Codigo do prontuario:</b> <input type="text" name="codProntuario" size="20" />
                     <br /><br />
                     <input type="hidden" name="acao" value="ConsultarProntuario">
                     <input type="submit" class="btn btn-dark" value="ConsultarProntuario" />
@@ -110,7 +110,7 @@
                 </form>
 
                 <form action="../controller/controlProntuario.php" method="post">
-                    Consultar Full Prontuário
+                <b>Consultar Full Prontuário</b>
                     <br /><br />
                     <input type="hidden" name="acao" value="consultarFullProntuario">
                     <input type="submit" class="btn btn-dark" value="consultarFullProntuario" />

@@ -27,15 +27,19 @@ if (isset($acao)) {
             $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            $birthDate = formatardataBancoEnvio($birthDate);
+            if (!validar_data($birthDate)) {
+                $_SESSION['msg'] = "Data invalida";
+             }
             
+            else{ 
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_numeric($cttemerg)
+                && is_numeric($cttemerg) && validar_data($birthDate)
                 && is_string($cargo) && is_numeric($PHD) 
                 && is_numeric($codMedico) && is_string($estadocivil)
                 ) {
+                    $birthDate = formatardataBancoEnvio($birthDate);
                     $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico, $estadocivil);
                     if ($medico->incluirMedico()){
                         $_SESSION['msg'] = "\n" ."Médico Incluido com sucesso !!";     
@@ -46,7 +50,10 @@ if (isset($acao)) {
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
                 
+                }
             }
+            $path = $_SERVER['HTTP_REFERER'];
+            header("Location: $path");
         }
     }
 }
@@ -72,15 +79,20 @@ if (isset($acao)) {
             $codMedico = htmlspecialchars_decode(strip_tags($codMedico));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            $birthDate = formatardataBancoEnvio($birthDate);
+            if (!validar_data($birthDate)) {
+                $_SESSION['msg'] = "Data invalida";
+             }
+            
+            else{ 
             
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_numeric($cttemerg)
+                && is_numeric($cttemerg) && validar_data($birthDate)
                 && is_string($cargo) && is_numeric($PHD) 
                 && is_numeric($codMedico) && is_string($estadocivil)
                 ) {
+                    $birthDate = formatardataBancoEnvio($birthDate);
                     $medico= new Medico($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $cargo, $PHD, $codMedico, $estadocivil);
                     if ($medico->alterarMedico()){
                         $_SESSION['msg'] = "\n" ."Médico alterado com sucesso !!";     
@@ -90,11 +102,11 @@ if (isset($acao)) {
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
                 
+                }
             }
+            $path = $_SERVER['HTTP_REFERER'];
+            header("Location: $path");
         }
     }
 }
-
-    $path = $_SERVER['HTTP_REFERER'];
-    header("Location: $path");
 ?>

@@ -63,7 +63,7 @@
 
 
         <form action="../controller/controlMedico.php" method="post">
-            Incluir Medico
+          <b>Incluir Medico</b>
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -81,7 +81,7 @@
             <br /><br />
             Digite o PHD: <input type="text" name="PHD" size="20" >
             <br /><br />
-            Digite o Código do Médico: <input type="text" name="codMedico" size="20" >
+            <b>Digite o Código do Médico:</b> <input type="text" name="codMedico" size="20" >
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />
@@ -91,7 +91,7 @@
         </form>
 
         <form action="../controller/controlMedico.php" method="post">
-            Alterar Medico
+        <b>Alterar Medico</b>
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -109,7 +109,7 @@
             <br /><br />
             Digite o PHD: <input type="text" name="PHD" size="20" >
             <br /><br />
-            Digite o Código do Médico: <input type="text" name="codMedico" size="20" >
+            <b>Digite o Código do Médico:</b> <input type="text" name="codMedico" size="20" >
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />

@@ -55,9 +55,9 @@
 
 <section>
 <form action="../controller/controlclinic.php" method="post">
-    Incluir Clínica
+    <b>Incluir Clínica</b>
     <br /><br />
-    Digite o codigo clinica: <input type="text" name="cod_clinic" size="20" />
+   <B>Digite o codigo clinica:</b> <input type="text" name="cod_clinic" size="20" />
     <br /><br />
     Digite o Nome: <input type="text" name="nome" size="20" />
     <br /><br />
@@ -85,9 +85,9 @@
 </form>
 
 <form action="../controller/controlclinic.php" method="post">
-    Alterar Clínica
+    <b>Alterar Clínica</b>
     <br /><br />
-    Digite o codigo clinica: <input type="text" name="cod_clinic" size="20" />
+    <B>Digite o codigo clinica:</b> <input type="text" name="cod_clinic" size="20" />
     <br /><br />
     Digite o Nome: <input type="text" name="nome" size="20" />
     <br /><br />

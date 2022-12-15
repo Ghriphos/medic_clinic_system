@@ -28,28 +28,34 @@ if (isset($acao)) {
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
             $deficiencia = htmlspecialchars_decode(strip_tags($deficiencia));
             $convenio = htmlspecialchars_decode(strip_tags($convenio));
-
-            $birthDate = formatardataBancoEnvio($birthDate);
             
+            if (!validar_data($birthDate)) {
+                $_SESSION['msg'] = "Data invalida";
+             }
+             else{
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_string($birthDate) && is_numeric($cttemerg)
+                && validar_data($birthDate) && is_numeric($cttemerg)
                 && is_string($tiposanguineo) && is_string($alergia) 
                 && is_numeric($codPaciente) && is_string($estadocivil)
                 && is_string($deficiencia) && is_string($convenio)
                 ) {
+                    $birthDate = formatardataBancoEnvio($birthDate);
                     $paciente= new Paciente($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $tiposanguineo, $alergia, $codPaciente, $estadocivil, $deficiencia, $convenio);
                     if ($paciente->incluirPaciente()){
                         $_SESSION['msg'] = "\n" ."Paciente Incluido com sucesso !!";     
                     } else {
 
-                    //    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
+                    $_SESSION['msg'] =  "\n" ."Falha no INSERT! Mensagem de erro: '$msg'";
                     }
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
                 
+                }
             }
+            $path = $_SERVER['HTTP_REFERER'];
+            header("Location: $path");
         }
     }
 }
@@ -75,30 +81,32 @@ if (isset($acao)) {
             $codPaciente = htmlspecialchars_decode(strip_tags($codPaciente));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            $birthDate = formatardataBancoEnvio($birthDate);
-            
+            if (!validar_data($birthDate)) {
+                $_SESSION['msg'] = "Data invalida";
+             }
+             else{
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_string($birthDate) && is_numeric($cttemerg)
+                && validar_data($birthDate) && is_numeric($cttemerg)
                 && is_string($tiposanguineo) && is_numeric($alergia) 
                 && is_numeric($codPaciente) && is_string($estadocivil)
                 ) {
+                    $birthDate = formatardataBancoEnvio($birthDate);
                     $paciente= new Paciente($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $tiposanguineo, $alergia, $deficiencia, $convenio, $codPaciente, $estadocivil);
                     if ($paciente->alterarPaciente()){
                         $_SESSION['msg'] = "\n" ."Paciente alterado com sucesso !!";     
                     } else {
-                        $msg = mysqli_error();
                         $_SESSION['msg'] =  "\n" ."Falha no Alterar! Mensagem de erro: '$msg'";
                     }
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
                 
+                }
             }
+            $path = $_SERVER['HTTP_REFERER'];
+            header("Location: $path");
         }
     }
 }
-
-    $path = $_SERVER['HTTP_REFERER'];
-    header("Location: $path");
 ?>

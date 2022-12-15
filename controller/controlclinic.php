@@ -32,7 +32,7 @@ if (isset($acao)) {
                 is_string($nome)&& is_numeric($cnpj)
                 && is_string($email) && is_string($street)
                 && is_numeric($street_number) && is_string($street_complement)
-                && is_string($district) && is_numeric($phone)
+                && is_string($district) && is_numeric($phone) && is_string($open_hour) && is_string($close_hour)
                 ) {
                     $clinic = new Clinic($cod_clinic,$nome,$cnpj,$email,$street,$street_number,$street_complement,$district,$phone,$open_hour,$close_hour);
                     if ($clinic->incluirClinic()){
@@ -59,7 +59,7 @@ if (isset($acao)) {
             && isset($street) && isset($street_number)
             && isset($street_complement) && isset($district)
             && isset($phone) && isset($open_hour)
-            && isset($close_hour)
+            && isset($close_hour) 
         ) {
             $cod_clinic = htmlspecialchars_decode(strip_tags($cod_clinic));
             $nome = htmlspecialchars_decode(strip_tags($nome));
@@ -78,7 +78,7 @@ if (isset($acao)) {
                 is_string($nome)&& is_numeric($cnpj)
                 && is_string($email) && is_string($street)
                 && is_numeric($street_number) && is_string($street_complement)
-                && is_string($district) && is_numeric($phone)
+                && is_string($district) && is_numeric($phone) && is_string($open_hour) && is_string($close_hour)
                 ) {
                     $clinic = new Clinic($cod_clinic,$nome,$cnpj,$email,$street,$street_number,$street_complement,$district,$phone,$open_hour,$close_hour);
                     if ($clinic->alterarClinic()){

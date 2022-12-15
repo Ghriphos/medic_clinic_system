@@ -26,14 +26,19 @@ if (isset($acao)) {
             $horarioFim = htmlspecialchars_decode(strip_tags($horarioFim));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            $birthDate = formatardataBancoEnvio($birthDate);
+            if (!validar_data($birthDate)) {
+                $_SESSION['msg'] = "Data invalida";
+             }
+            
+            else{ 
             
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_numeric($cttemerg)
-                && is_string($codRecepcionista) && is_string($estadocivil)
+                && is_numeric($cttemerg) && validar_data($birthDate)
+                && is_string($codRecepcionista) && is_string($estadocivil) && is_string($horarioInicio) && is_string($horarioFim)
                 ) {
+                    $birthDate = formatardataBancoEnvio($birthDate);
                     $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horarioInicio, $horarioFim);
                     if ($recepcionista->incluirRecepcionista()){
                         $_SESSION['msg'] = "\n" ."Recepcionista Incluida com sucesso !!";     
@@ -44,7 +49,10 @@ if (isset($acao)) {
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
                 
+                }
             }
+            $path = $_SERVER['HTTP_REFERER'];
+            header("Location: $path");
         }
     }
 }
@@ -69,15 +77,20 @@ if (isset($acao)) {
             $horarioFim = htmlspecialchars_decode(strip_tags($horarioFim));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
-            $birthDate = formatardataBancoEnvio($birthDate);
+            if (!validar_data($birthDate)) {
+                $_SESSION['msg'] = "Data invalida";
+             }
+            
+            else{ 
             
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
                 && is_string($birthDate) && is_numeric($cttemerg)
-                && is_string($codRecepcionista) && is_string($horarioInicio) 
-                && is_string($horarioFim) && is_string($estadocivil)
+                && validar_data($birthDate)
+                && is_string($codRecepcionista) && is_string($estadocivil) && is_string($horarioInicio) && is_string($horarioFim)
                 ) {
+                    $birthDate = formatardataBancoEnvio($birthDate);
                     $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horarioInicio, $horarioFim);
                     if ($recepcionista->alterarRecepcionista()){
                         $_SESSION['msg'] = "\n" ."Recepcionista alterada com sucesso !!";     
@@ -87,11 +100,11 @@ if (isset($acao)) {
             } else {
                 $_SESSION['msg'] = "Parametros informados são invalidos!!";
                 
+                }
             }
+            $path = $_SERVER['HTTP_REFERER'];
+            header("Location: $path");
         }
     }
 }
-
-    $path = $_SERVER['HTTP_REFERER'];
-    header("Location: $path");
 ?>

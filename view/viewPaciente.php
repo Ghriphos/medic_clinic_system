@@ -63,7 +63,7 @@
 
 
         <form action="../controller/controlPaciente.php" method="post">
-            Incluir Paciente
+        <b>Incluir Paciente</b>
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -85,7 +85,7 @@
             <br /><br />
             Digite o Convenio: <input type="text" name="convenio" size="20" >
             <br /><br />
-            Digite o Código do Paciente: <input type="text" name="codPaciente" size="20" >
+            <b>Digite o Código do Paciente:</b> <input type="text" name="codPaciente" size="20" >
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />
@@ -95,7 +95,7 @@
         </form>
 
         <form action="../controller/controlPaciente.php" method="post">
-            Alterar Paciente
+        <b>Alterar Paciente</b>
             <br /><br />
             Digite o Nome: <input type="text" name="nome" size="20" />
             <br /><br />
@@ -117,7 +117,7 @@
             <br /><br />
             Digite o Convenio: <input type="text" name="convenio" size="20" >
             <br /><br />
-            Digite o Código do Paciente: <input type="text" name="codPaciente" size="20" >
+            <b>Digite o Código do Paciente:</b> <input type="text" name="codPaciente" size="20" >
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />

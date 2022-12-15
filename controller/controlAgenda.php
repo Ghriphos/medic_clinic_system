@@ -18,7 +18,7 @@ if (isset($acao)) {
             $codConsulta = htmlspecialchars_decode(strip_tags($codConsulta));
             
             if (
-                is_numeric($stats)
+                is_string($dataehora) && is_numeric($stats)
                 && is_string($descricao) && is_string($codConsulta)
                 ) {
                     $agenda = new Agenda($dataehora, $stats, $descricao, $codConsulta);
@@ -51,7 +51,7 @@ if (isset($acao)) {
             $codConsulta = htmlspecialchars_decode(strip_tags($codConsulta));
             
             if (
-                is_numeric($stats)
+                is_string($dataehora) && is_numeric($stats)
                 && is_string($descricao) && is_string($codConsulta)
                 ) {
                     $agenda = new Agenda($dataehora, $stats, $descricao, $codConsulta);
