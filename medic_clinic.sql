@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Dez-2022 às 03:31
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 15-Dez-2022 às 16:04
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,6 +34,13 @@ CREATE TABLE `agenda` (
   `codConsulta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `agenda`
+--
+
+INSERT INTO `agenda` (`dataehora`, `stats`, `descricao`, `codConsulta`) VALUES
+('10/10 11:11', '11', '11', 11);
+
 -- --------------------------------------------------------
 
 --
@@ -50,9 +57,16 @@ CREATE TABLE `clinic` (
   `street_complement` varchar(50) NOT NULL,
   `district` varchar(50) NOT NULL,
   `phone` varchar(50) NOT NULL,
-  `open_hour` datetime NOT NULL,
-  `close_hour` datetime NOT NULL
+  `open_hour` time NOT NULL,
+  `close_hour` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `clinic`
+--
+
+INSERT INTO `clinic` (`cod_clinic`, `nome`, `cnpj`, `email`, `street`, `street_number`, `street_complement`, `district`, `phone`, `open_hour`, `close_hour`) VALUES
+(11, 'LRV', 12345, 'lrvclinic', 'lrv', 11, '11', 'lrvv', '123456', '11:11:00', '12:12:00');
 
 -- --------------------------------------------------------
 
@@ -124,8 +138,16 @@ CREATE TABLE `recepcionista` (
   `cttemerg` int(20) DEFAULT NULL,
   `estadocivil` varchar(20) DEFAULT NULL,
   `codRecepcionista` int(11) NOT NULL,
-  `horario` int(10) DEFAULT NULL
+  `horarioInicio` time NOT NULL,
+  `horarioFim` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `recepcionista`
+--
+
+INSERT INTO `recepcionista` (`nome`, `phone`, `street`, `cpf`, `birthDate`, `cttemerg`, `estadocivil`, `codRecepcionista`, `horarioInicio`, `horarioFim`) VALUES
+('11', 11, '11', 11, '0000-00-00', 1234, '11', 11, '11:11:00', '12:12:00');
 
 --
 -- Índices para tabelas despejadas

@@ -79,7 +79,9 @@
             <br /><br />
             Digite o Codigo da recepcionista: <input type="text" name="codRecepcionista" size="20" >
             <br /><br />
-            Digite o Horário: <input type="text" name="horario" size="20" >
+            Digite o Horário inicial: <input type="text" name="horarioInicio" size="20" >
+            <br /><br />
+            Digite o Horário final: <input type="text" name="horarioFim" size="20" >
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />
@@ -105,7 +107,9 @@
             <br /><br />
             Digite o Codigo da recepcionista: <input type="text" name="codRecepcionista" size="20" >
             <br /><br />
-            Digite o Horário: <input type="text" name="horario" size="20" >
+            Digite o Horário inicial: <input type="text" name="horarioInicio" size="20" >
+            <br /><br />
+            Digite o Horário final: <input type="text" name="horarioFim" size="20" >
             <br /><br />
             Digite o estado civil: <input type="text" name="estadocivil" size="20" >
             <br /><br />

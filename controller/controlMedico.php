@@ -32,7 +32,7 @@ if (isset($acao)) {
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_string($birthDate) && is_numeric($cttemerg)
+                && is_numeric($cttemerg)
                 && is_string($cargo) && is_numeric($PHD) 
                 && is_numeric($codMedico) && is_string($estadocivil)
                 ) {
@@ -77,7 +77,7 @@ if (isset($acao)) {
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_string($birthDate) && is_numeric($cttemerg)
+                && is_numeric($cttemerg)
                 && is_string($cargo) && is_numeric($PHD) 
                 && is_numeric($codMedico) && is_string($estadocivil)
                 ) {

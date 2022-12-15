@@ -13,7 +13,7 @@ if (isset($acao)) {
             && isset($phone) && isset($street)
             && isset($cpf) && isset($codRecepcionista)
             && isset($birthDate) && isset($cttemerg)
-            && isset($horario) && isset($estadocivil)
+            && isset($horarioInicio) && isset($horarioFim) && isset($estadocivil)
         ) {
             $nome = htmlspecialchars_decode(strip_tags($nome));
             $phone = htmlspecialchars_decode(strip_tags($phone));
@@ -22,7 +22,8 @@ if (isset($acao)) {
             $birthDate = htmlspecialchars_decode(strip_tags($birthDate));
             $cttemerg = htmlspecialchars_decode(strip_tags($cttemerg));
             $codRecepcionista = htmlspecialchars_decode(strip_tags($codRecepcionista));
-            $horario = htmlspecialchars_decode(strip_tags($horario));
+            $horarioInicio = htmlspecialchars_decode(strip_tags($horarioInicio));
+            $horarioFim = htmlspecialchars_decode(strip_tags($horarioFim));
             $estadocivil = htmlspecialchars_decode(strip_tags($estadocivil));
 
             $birthDate = formatardataBancoEnvio($birthDate);
@@ -30,8 +31,8 @@ if (isset($acao)) {
             if (
                 is_string($nome)&& is_numeric($phone)
                 && is_string($street) && is_numeric($cpf) 
-                && is_string($birthDate) && is_numeric($cttemerg)
-                && is_string($codRecepcionista) && is_numeric($horario) && is_string($estadocivil)
+                && is_numeric($cttemerg)
+                && is_string($codRecepcionista) && is_string($estadocivil)
                 ) {
                     $recepcionista= new Recepcionista($nome, $phone, $street, $cpf, $birthDate, $cttemerg, $estadocivil, $codRecepcionista, $horarioInicio, $horarioFim);
                     if ($recepcionista->incluirRecepcionista()){
@@ -54,7 +55,7 @@ if (isset($acao)) {
             isset($nome) && isset($phone) 
             && isset($street) && isset($cpf)
             && isset($birthDate) && isset($cttemerg)
-            && isset($codRecepcionista) && isset($horario)
+            && isset($codRecepcionista) && isset($horarioInicio) && isset($horarioFim)
             && isset($estadocivil)
         ) {
             $nome = htmlspecialchars_decode(strip_tags($nome));

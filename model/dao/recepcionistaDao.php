@@ -23,10 +23,11 @@ class RecepcionistaDao
 
     public function incluirRecepcionista($recepcionista)
     {
-        $sql = "INSERT INTO recepcionista (codRecepcionista, horario, nome, street, cpf, birthdate, cttemerg, estadocivil, phone) 
+        $sql = "INSERT INTO recepcionista (codRecepcionista, horarioInicio, horarioFim, nome, street, cpf, birthdate, cttemerg, estadocivil, phone) 
         VALUES ('" . #Aspas simples pois isso vem do banco de dados. E aspas duplas porque estamos botando valores
         $recepcionista->getCodRecepcionista()."','".
-        $recepcionista->getHorario()."','".
+        $recepcionista->getHorarioInicio()."','".
+        $recepcionista->getHorarioFim()."','".
         $recepcionista->getNome()."','".
         $recepcionista->getStreet()."','".
         $recepcionista->getCpf()."','".
@@ -58,7 +59,8 @@ class RecepcionistaDao
         "street = '".$recepcionista->getStreet()."',".
         "birthdate = '".$recepcionista->getBirthDate()."',".
         "cttemerg = '".$recepcionista->getCttemerg()."',".
-        "horario = '".$recepcionista->getHorario()."',".
+        "horarioInicio = '".$recepcionista->getHorarioInicio()."',". 
+        "horarioFim = '".$recepcionista->getHorarioFim()."',". 
         "cpf = '".$recepcionista->getCpf()."',".
         "estadocivil = '".$recepcionista->getEstadocivil()."'".
         " WHERE ". " codRecepcionista = '".$recepcionista->getCodRecepcionista()."';"; 
